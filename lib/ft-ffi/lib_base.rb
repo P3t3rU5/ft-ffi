@@ -183,6 +183,13 @@ module FT
       end
     end
 
+    def define_prefix(prefix, target_enum)
+      c = const_set(prefix, Module.new) unless const_defined? prefix
+      target_enum.to_h.each do |k, v|
+        c.const_set(key, v) unless const_defined? key
+      end
+    end
+
     def self.extended(c)
       c.extend FFI::Library
       instance_variables.each do |v|

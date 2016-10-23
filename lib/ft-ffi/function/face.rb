@@ -94,6 +94,18 @@ module FT
   #     FT_UInt* agindex)
   attach_function 'Get_Next_Char', 'FT_Get_Next_Char', [FaceRec.ptr(:in), :FT_ULong, :pointer], :FT_ULong
 
+  # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Get_Name_Index
+  # FT_UInt FT_Get_Name_Index( FT_Face face, FT_String*  glyph_name );
+  attach_function 'Get_Name_Index', 'FT_Get_Name_Index', [FaceRec.ptr, :string], :FT_UInt
+
+  # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Get_Next_Char
+  # FT_ULong FT_Get_Next_Char( FT_Face    face, FT_ULong   char_code, FT_UInt   *agindex )
+  attach_function 'Get_Next_Char', 'FT_Get_Next_Char', [FaceRec.ptr, :FT_ULong, :FT_UInt], :FT_ULong
+
+  # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Get_Postscript_Name
+  # const char* FT_Get_Postscript_Name( FT_Face  face );
+  attach_function 'Get_Postscript_Name', 'FT_Get_Postscript_Name', [FaceRec.ptr(:in)], :pointer
+
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Load_Char
   # FT_Error FT_Load_Char(
   #          FT_Face  face,
@@ -124,6 +136,14 @@ module FT
   #          FT_UInt pixel_height)
   ft_function 'Set_Pixel_Sizes', FaceRec.ptr, :FT_UInt, :FT_UInt
 
+  # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Get_Track_Kerning
+  # FT_Error FT_Get_Track_Kerning(
+  #   FT_Face    face,
+  #   FT_Fixed   point_size,
+  #   FT_Int     degree,
+  #   FT_Fixed*  akerning )
+  ft_function 'Get_Track_Kerning', [FaceRec.ptr(:in), :FT_Fixed, :FT_Int, :pointer]
+
   # Glyph Variants
   # http://www.freetype.org/freetype2/docs/reference/ft2-glyph_variants.html
 
@@ -153,21 +173,6 @@ module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Select_Charmap
   # FT_Error FT_Select_Charmap( FT_Face face, FT_Encoding  encoding )
   ft_function 'Select_Charmap', FaceRec.ptr, Encoding
-
-  # SfntName
-  # https://www.freetype.org/freetype2/docs/reference/ft2-sfnt_names.html#FT_Get_Sfnt_Name_Count
-  # FT_UInt FT_Get_Sfnt_Name_Count( FT_Face  face )
-  attach_function 'Get_Sfnt_Name_Count', 'FT_Get_Sfnt_Name_Count', [FaceRec.ptr(:in)], :FT_UInt
-
-  # https://www.freetype.org/freetype2/docs/reference/ft2-sfnt_names.html#FT_Get_Sfnt_Name
-  # FT_Error FT_Get_Sfnt_Name( FT_Face face, FT_UInt idx, FT_SfntName  *aname )
-  ft_function 'Get_Sfnt_Name', FaceRec.ptr(:in), :FT_UInt, SfntName
-
-  # https://www.freetype.org/freetype2/docs/reference/ft2-sfnt_names.html#FT_PARAM_TAG_IGNORE_PREFERRED_FAMILY
-  #define FT_PARAM_TAG_IGNORE_PREFERRED_FAMILY  FT_MAKE_TAG( 'i', 'g', 'p', 'f' )
-
-  # https://www.freetype.org/freetype2/docs/reference/ft2-sfnt_names.html#FT_PARAM_TAG_IGNORE_PREFERRED_SUBFAMILY
-  #define FT_PARAM_TAG_IGNORE_PREFERRED_SUBFAMILY  FT_MAKE_TAG( 'i', 'g', 'p', 's' )
 
   # BDF
   # https://www.freetype.org/freetype2/docs/reference/ft2-bdf_fonts.html#FT_Get_BDF_Charset_ID

@@ -1,6 +1,7 @@
 require 'ft-ffi'
 
 module FT
+  # https://www.freetype.org/freetype2/docs/reference/ft2-type1_tables.html#T1_Blend_Flags
   BlendFlags = enum :blend_flags, [
       :UNDERLINE_POSITION, 0,
       :UNDERLINE_THICKNESS,
@@ -19,5 +20,6 @@ module FT
       :MAX,
       :FORCE_BOLD, 13,
   ]
-  # define_prefix(:T1_BLEND)
+
+  define_prefix(:T1_BLEND, BlendFlags)
 end

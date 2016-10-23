@@ -1,7 +1,9 @@
 require 'ft-ffi'
 
 module FT
+  # https://www.freetype.org/freetype2/docs/reference/ft2-type1_tables.html#PS_Dict_Keys
   DictKeys = enum :dict_keys, [
+      # conventionally in the font dictionary
       :FONT_TYPE,
       :FONT_MATRIX,
       :FONT_BBOX,
@@ -14,6 +16,7 @@ module FT
       :ENCODING_TYPE,
       :ENCODING_ENTRY,
 
+      # conventionally in the font Private dictionary
       :NUM_SUBRS,
       :SUBR,
       :STD_HW,
@@ -40,6 +43,7 @@ module FT
       :PASSWORD,
       :LANGUAGE_GROUP,
 
+      # conventionally in the font FontInfo dictionary
       :VERSION,
       :NOTICE,
       :FULL_NAME,
@@ -54,5 +58,5 @@ module FT
 
   PS_DICT_MAX = DictKeys[:ITALIC_ANGLE]
 
-  # define_prefix(:PS_DICT, DictKeys)
+  define_prefix(:PS_DICT, DictKeys)
 end

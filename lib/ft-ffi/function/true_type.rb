@@ -1,4 +1,5 @@
 require 'ft-ffi/enum/sfnt_tag'
+require 'ft-ffi/struct/library_rec'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-truetype_tables.html#FT_Get_Sfnt_Table
@@ -30,5 +31,7 @@ module FT
   # FT_EXPORT( FT_Long )  FT_Get_CMap_Format( FT_CharMap  charmap );
   attach_function 'Get_CMap_Format', 'FT_Get_CMap_Format', [CharMapRec.ptr], :long
 
-
+  # https://www.freetype.org/freetype2/docs/reference/ft2-truetype_engine.html#FT_Get_TrueType_Engine_Type
+  # FT_TrueTypeEngineType FT_Get_TrueType_Engine_Type( FT_Library  library );
+  attach_function 'Get_TrueType_Engine_Type', 'FT_Get_TrueType_Engine_Type', [LibraryRec.ptr(:in)], :FT_UInt
 end
