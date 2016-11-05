@@ -1,7 +1,6 @@
-require 'ft-ffi'
+require 'ft-ffi/enum/bdf_pcf/property_type'
 
 module FT
-
   class PropertyRecUnion < FFIAdditions::Struct
     layout atom:       :pointer,
            integer:   :FT_Int32,

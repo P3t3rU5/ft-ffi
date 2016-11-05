@@ -1,4 +1,6 @@
 require 'ft-ffi/struct/postscript/cid_face_dict_rect'
+require 'ft-ffi/struct/postscript/font_info_rec'
+require 'ft-ffi/struct/bbox'
 
 module FT
   class CID_FaceInfoRec < FFIAdditions::Struct

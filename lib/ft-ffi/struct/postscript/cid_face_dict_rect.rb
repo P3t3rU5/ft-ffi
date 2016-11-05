@@ -1,4 +1,6 @@
 require 'ft-ffi/struct/postscript/private_rec'
+require 'ft-ffi/struct/matrix'
+require 'ft-ffi/struct/vector'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-type1_tables.html#CID_FaceDictRec
@@ -12,8 +14,8 @@ module FT
 
            paint_type:           :FT_Byte,
            font_type:            :FT_Byte,
-           font_matrix:        :FT_Matrix,
-           font_offset:        :FT_Vector,
+           font_matrix:            Matrix,
+           font_offset:            Vector,
 
            num_subrs:            :FT_UInt,
            subrmap_offset:      :FT_ULong,

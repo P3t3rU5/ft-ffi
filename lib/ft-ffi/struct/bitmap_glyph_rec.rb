@@ -1,3 +1,5 @@
+require 'ft-ffi/struct/bitmap'
+
 module FT
   class BitmapGlyphRec < FFIAdditions::Struct
     layout root: GlyphRec,

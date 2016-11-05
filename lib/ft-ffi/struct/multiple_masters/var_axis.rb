@@ -8,6 +8,6 @@ module FT
            def:     :FT_Fixed,
            maximum: :FT_Fixed,
            tag:     :FT_ULong,
-           strid:    :FT_UInt,
+           strid:    :FT_UInt
   end
 end

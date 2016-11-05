@@ -8,6 +8,6 @@ module FT
            :num_designs,       :FT_UInt,
            :num_namedstyles,   :FT_UInt,
            :axis,              Var_Axis,
-           :namedstyle, Var_Named_Style,
+           :namedstyle, Var_Named_Style
   end
 end

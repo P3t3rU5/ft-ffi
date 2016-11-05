@@ -15,7 +15,7 @@ module FT
   #     FT_Library        library,
   #     const FT_Bitmap  *source,
   #     FT_Bitmap        *target)
-  ft_function 'Bitmap_Copy', :FT_Library, Bitmap.by_ref, Bitmap.by_ref
+  ft_function 'Bitmap_Copy', LibraryRec.ptr(:in), Bitmap.ptr(:in), Bitmap.ptr(:out)
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-bitmap_handling.html#FT_Bitmap_Embolden
   # FT_Bitmap_Embolden(
@@ -23,7 +23,7 @@ module FT
   #     FT_Bitmap*  bitmap,
   #     FT_Pos      xStrength,
   #     FT_Pos      yStrength )
-  ft_function 'Bitmap_Embolden', :FT_Library, Bitmap.by_ref, :FT_Pos, :FT_Pos
+  ft_function 'Bitmap_Embolden', LibraryRec.ptr(:in), Bitmap.by_ref, :FT_Pos, :FT_Pos
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-bitmap_handling.html#FT_Bitmap_Convert
   # FT_Bitmap_Convert(
@@ -31,13 +31,9 @@ module FT
   #    const FT_Bitmap  *source,
   #    FT_Bitmap        *target,
   #    FT_Int            alignment )
-  ft_function 'Bitmap_Convert', :FT_Library, Bitmap.by_ref, Bitmap.by_ref, :FT_Int
-
-  # https://www.freetype.org/freetype2/docs/reference/ft2-bitmap_handling.html#FT_GlyphSlot_Own_Bitmap
-  # FT_GlyphSlot_Own_Bitmap( FT_GlyphSlot  slot )
-  ft_function 'GlyphSlot_Own_Bitmap', GlyphSlotRec.by_ref
+  ft_function 'Bitmap_Convert', LibraryRec.ptr(:in), Bitmap.ptr(:in), Bitmap.ptr(:out), :FT_Int
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-bitmap_handling.html#FT_Bitmap_Done
   # FT_Bitmap_Done( FT_Library  library, FT_Bitmap  *bitmap )
-  ft_function 'Bitmap_Done', :FT_Library, Bitmap.by_ref
+  ft_function 'Bitmap_Done', LibraryRec.ptr(:in), Bitmap.ptr(:in)
 end

@@ -1,4 +1,4 @@
-require 'ft-ffi/struct/outline_glyph_rec'
+require 'ft-ffi/struct/glyph/glyph_rec'
 require 'ft-ffi/struct/outline'
 
 module FT

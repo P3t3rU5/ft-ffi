@@ -10,4 +10,6 @@ module FT
   class FaceRec < FFIAdditions::Struct; end
   class ListNodeRec < FFIAdditions::Struct; end
   class RendererRec < FFIAdditions::Struct; end
+  class GlyphClass < FFIAdditions::Struct; end
+  class CMapRec < FFIAdditions::Struct; end
 end

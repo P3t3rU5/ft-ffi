@@ -1,4 +1,6 @@
 require 'ft-ffi/struct/module_class'
+require 'ft-ffi/enum/glyph_format'
+require 'ft-ffi/struct/list_node_rec'
 
 module FT
   typedef :pointer, :FT_Module
@@ -58,20 +60,20 @@ module FT
 
 
   # FT_Add_Default_Modules( FT_Library  library )
-  ft_function 'Add_Default_Modules', :FT_Library
+  ft_function 'Add_Default_Modules', LibraryRec.ptr(:in)
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-module_management.html#FT_Get_Renderer
   # FT_EXPORT( FT_Renderer )
   # FT_Get_Renderer( FT_Library       library,
   #                  FT_Glyph_Format  format );
-  attach_function 'Get_Renderer', 'FT_Get_Renderer', [LibraryRec.ptr(:in), GlyphRec.ptr(:in)], Renderer_Class
+  attach_function 'Get_Renderer', 'FT_Get_Renderer', [LibraryRec.ptr(:in), GlyphFormat], Renderer_Class
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-module_management.html#FT_Set_Renderer
   # FT_Set_Renderer( FT_Library     library,
   #                  FT_Renderer    renderer,
   #                  FT_UInt        num_params,
   #                  FT_Parameter*  parameters );
-  ft_function 'Set_Renderer', LibraryRec.ptr, RendererRec.ptr(:in), :FT_UInt, Parameter.ptr(:in)
+  ft_function 'Set_Renderer', LibraryRec.ptr(:in), RendererRec.ptr(:in), :FT_UInt, Parameter.ptr(:in)
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-module_management.html#FT_Set_Debug_Hook
   # FT_EXPORT( void )
@@ -79,5 +81,18 @@ module FT
   #   FT_Library         library,
   #   FT_UInt            hook_index,
   #   FT_DebugHook_Func  debug_hook )
-  attach_function 'Set_Debug_Hook', 'FT_Set_Debug_Hook', [LibraryRec.ptr, :FT_UInt, DebugHook_Func], :void
+  attach_function 'Set_Debug_Hook', 'FT_Set_Debug_Hook', [LibraryRec.by_ref, :FT_UInt, DebugHook_Func], :void
+
+  # Not Documented
+  # FT_Renderer FT_Lookup_Renderer(
+  #   FT_Library       library,
+  #   FT_Glyph_Format  format,
+  #   FT_ListNode*     node );
+  attach_function 'Lookup_Renderer', 'FT_Lookup_Renderer', [LibraryRec.ptr, GlyphFormat, ListNodeRec.ptr], :pointer
+
+  # FT_Pointer ft_module_get_service( FT_Module module, const char*  service_id );
+  attach_function 'module_get_service', 'ft_module_get_service', [ModuleRec.ptr, :pointer], :FT_Pointer
+
+  # const void* FT_Get_Module_Interface( FT_Library   library, const char*  mod_name );
+  attach_function 'Get_Module_Interface', 'FT_Get_Module_Interface', [LibraryRec.ptr(:in), :pointer], :pointer
 end

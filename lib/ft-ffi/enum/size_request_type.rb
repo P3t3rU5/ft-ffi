@@ -10,5 +10,5 @@ module FT
       :MAX
   ]
 
-  # define_prefix(:SIZE_REQUEST_TYPE, SizeRequestType)
+  define_prefix(:SIZE_REQUEST_TYPE, SizeRequestType)
 end

@@ -184,9 +184,9 @@ module FT
     end
 
     def define_prefix(prefix, target_enum)
-      c = const_set(prefix, Module.new) unless const_defined? prefix
+      c = const_defined?(prefix) ? const_get(prefix) : const_set(prefix, Module.new)
       target_enum.to_h.each do |k, v|
-        c.const_set(key, v) unless const_defined? key
+        c.const_set(k, v) unless const_defined? k
       end
     end
 

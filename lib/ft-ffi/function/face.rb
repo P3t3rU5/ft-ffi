@@ -6,6 +6,7 @@ require 'ft-ffi/struct/open_args'
 require 'ft-ffi/struct/face_rec'
 require 'ft-ffi/struct/library_rec'
 require 'ft-ffi/struct/sfnt_name'
+require 'ft-ffi/struct/size_request_rec'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Attach_File
@@ -34,7 +35,7 @@ module FT
   ft_function 'New_Memory_Face', LibraryRec.ptr, :pointer, :FT_Long, :FT_Long, FaceRec.ptr(:out)
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Open_Face
-  # FT_EXPORT( FT_Error ) FT_Open_Face( FT_Library library, const FT_Open_Args* args, FT_Long face_index, FT_Face *aface );
+  # FT_Error FT_Open_Face( FT_Library library, const FT_Open_Args* args, FT_Long face_index, FT_Face *aface );
   ft_function 'Open_Face', LibraryRec.ptr, Open_Args.ptr(:in), :FT_Long, FaceRec.ptr(:out)
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_New_Face
@@ -142,7 +143,7 @@ module FT
   #   FT_Fixed   point_size,
   #   FT_Int     degree,
   #   FT_Fixed*  akerning )
-  ft_function 'Get_Track_Kerning', [FaceRec.ptr(:in), :FT_Fixed, :FT_Int, :pointer]
+  ft_function 'Get_Track_Kerning', FaceRec.ptr(:in), :FT_Fixed, :FT_Int, :pointer
 
   # Glyph Variants
   # http://www.freetype.org/freetype2/docs/reference/ft2-glyph_variants.html
@@ -182,4 +183,36 @@ module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-bdf_fonts.html#FT_Get_BDF_Property
   # FT_Error FT_Get_BDF_Property( FT_Face face, const char* prop_name, BDF_PropertyRec  *aproperty )
   # ft_function 'Get_BDF_Property', FaceRec.ptr(:in), :string, PropertyRec.ptr(:out)
+
+  # Match a size request against `available_sizes'.
+  # FT_Error FT_Match_Size(
+  #   FT_Face          face,
+  #   FT_Size_Request  req,
+  #   FT_Bool          ignore_width,
+  #   FT_ULong*        size_index );
+  ft_function 'Match_Size', FaceRec.ptr, Size_RequestRec.ptr, :FT_Bool, :pointer
+
+  # void FT_Request_Metrics( FT_Face face, FT_Size_Request req );
+  attach_function 'Request_Metrics', 'FT_Request_Metrics', [FaceRec.ptr, Size_RequestRec.ptr], :void
+
+  # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Request_Size
+  # FT_Error FT_Request_Size( FT_Face face, FT_Size_Request req );
+  ft_function 'Request_Size', FaceRec.ptr, Size_RequestRec.ptr(:in)
+
+  # void FT_Select_Metrics( FT_Face   face, FT_ULong  strike_index );
+  attach_function 'Select_Metrics', 'FT_Select_Metrics', [FaceRec.ptr, :FT_ULong], :void
+
+  # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Select_Size
+  # FT_Error FT_Select_Size( FT_Face  face, FT_Int   strike_index );
+  ft_function 'Select_Size', FaceRec.ptr, :FT_Int
+
+  # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Set_Charmap
+  # FT_Error FT_Set_Charmap( FT_Face face, FT_CharMap charmap );
+  ft_function 'Set_Charmap', FaceRec.ptr, CharMapRec.ptr(:in)
+
+  # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Set_Transform
+  # void FT_Set_Transform( FT_Face face, FT_Matrix*  matrix, FT_Vector*  delta );
+  attach_function 'Set_Transform', 'FT_Set_Transform', [FaceRec.ptr, Matrix.ptr(:in), Vector.ptr(:in)], :void
+
+
 end

@@ -4,7 +4,7 @@ require 'ft-ffi/struct/library_rec'
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-truetype_tables.html#FT_Get_Sfnt_Table
   # void* FT_Get_Sfnt_Table( FT_Face  face, FT_Sfnt_Tag  tag )
-  attach_function 'FT_Get_Sfnt_Table', 'Get_Sfnt_Table', [FaceRec, SfntTag], :pointer
+  attach_function 'Get_Sfnt_Table', 'FT_Get_Sfnt_Table', [FaceRec, SfntTag], :pointer
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-truetype_tables.html#FT_Load_Sfnt_Table
   # FT_Error FT_Load_Sfnt_Table(

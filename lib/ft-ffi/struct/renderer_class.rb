@@ -1,5 +1,6 @@
 require 'ft-ffi/enum/glyph_format'
 require 'ft-ffi/struct/glyph/glyph_slot_rec'
+require 'ft-ffi/struct/matrix'
 require 'ft-ffi/struct/vector'
 require 'ft-ffi/struct/bbox'
 require 'ft-ffi/struct/raster_funcs'

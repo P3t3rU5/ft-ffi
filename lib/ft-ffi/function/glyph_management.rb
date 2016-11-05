@@ -1,8 +1,8 @@
 require 'ft-ffi/enum/glyph_bbox_mode'
 require 'ft-ffi/enum/render_mode'
 
-require 'ft-ffi/struct/glyph_rec'
-require 'ft-ffi/struct/glyph_slot_rec'
+require 'ft-ffi/struct/glyph/glyph_rec'
+require 'ft-ffi/struct/glyph/glyph_slot_rec'
 require 'ft-ffi/struct/vector'
 require 'ft-ffi/struct/matrix'
 

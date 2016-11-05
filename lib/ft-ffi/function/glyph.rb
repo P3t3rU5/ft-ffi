@@ -12,5 +12,5 @@ module FT
   #   FT_Int       *p_arg2,
   #   FT_Matrix    *p_transform );
   ft_function 'Get_SubGlyph_Info',
-              [GlyphSlotRec.ptr(:in), :FT_UInt, :pointer, :pointer, :pointer, :pointer, Matrix.ptr(:out)]
+              GlyphSlotRec.ptr(:in), :FT_UInt, :pointer, :pointer, :pointer, :pointer, Matrix.ptr(:out)
 end

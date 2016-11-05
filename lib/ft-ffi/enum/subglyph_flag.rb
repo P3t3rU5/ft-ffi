@@ -8,7 +8,7 @@ module FT
       :ROUND_XY_TO_GRID,        4,
       :SCALE,                   8,
       :XY_SCALE,             0x40,
-      :'2X2',                0x80,
+      :N2X2,                 0x80,
       :USE_MY_METRICS,      0x200,
   ]
 

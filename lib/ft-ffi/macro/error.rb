@@ -1,4 +1,5 @@
 require 'ft-ffi'
+require 'ft-ffi/config'
 
 module FT
   ERR_PREFIX = :Err_
