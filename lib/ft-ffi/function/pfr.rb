@@ -1,6 +1,5 @@
-require 'ft-ffi'
-require 'ft-ffi/struct/face_rec'
-require 'ft-ffi/struct/vector'
+require_relative '../struct/face_rec'
+require_relative '../struct/vector'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-pfr_fonts.html

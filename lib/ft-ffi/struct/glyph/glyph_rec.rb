@@ -1,8 +1,7 @@
-require 'ft-ffi/enum/glyph_format'
-
-require 'ft-ffi/struct/library_rec'
-require 'ft-ffi/struct/vector'
-require 'ft-ffi/struct/glyph/glyph_class'
+require_relative '../../enum/glyph_format'
+require_relative '../library_rec'
+require_relative '../vector'
+require_relative 'glyph_class'
 
 module FT
   class GlyphRec < FFIAdditions::Struct

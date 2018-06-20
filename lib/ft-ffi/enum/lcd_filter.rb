@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   # http://freetype.sourceforge.net/freetype2/docs/reference/ft2-lcd_filtering.html#FT_LcdFilter
   LcdFilter = enum :lcd_filter, [

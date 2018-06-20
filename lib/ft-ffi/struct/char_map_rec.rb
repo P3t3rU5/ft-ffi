@@ -1,5 +1,5 @@
-require 'ft-ffi/enum/encoding'
-require 'ft-ffi/enum/true_type/platform'
+require_relative '../enum/encoding'
+require_relative '../enum/true_type/platform'
 
 module FT
   class CharMapRec < FFIAdditions::Struct

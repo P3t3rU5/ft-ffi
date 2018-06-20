@@ -1,6 +1,6 @@
-require 'ft-ffi/struct/postscript/private_rec'
-require 'ft-ffi/struct/matrix'
-require 'ft-ffi/struct/vector'
+require_relative 'private_rec'
+require_relative '../../struct/matrix'
+require_relative '../../struct/vector'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-type1_tables.html#CID_FaceDictRec

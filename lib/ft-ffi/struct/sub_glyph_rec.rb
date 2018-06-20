@@ -1,4 +1,4 @@
-require 'ft-ffi/struct/matrix'
+require_relative 'matrix'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_SubGlyph

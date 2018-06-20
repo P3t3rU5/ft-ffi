@@ -1,4 +1,4 @@
-require 'ft-ffi/struct/multiple_masters/multiple_masters_axis'
+require_relative 'multiple_masters_axis'
 
 module FT
   MAX_MM_AXIS = 4

@@ -1,6 +1,6 @@
-require 'ft-ffi/struct/module_class'
-require 'ft-ffi/struct/library_rec'
-require 'ft-ffi/struct/memory_rec'
+require_relative 'module_class'
+require_relative 'library_rec'
+require_relative 'memory_rec'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-module_management.html#FT_Module

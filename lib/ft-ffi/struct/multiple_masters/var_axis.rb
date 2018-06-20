@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-multiple_masters.html#FT_Var_Axis
   class Var_Axis < FFIAdditions::Struct

@@ -1,4 +1,4 @@
-require 'ft-ffi/struct/vector'
+require_relative 'vector'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-outline_processing.html#FT_Outline_MoveToFunc

@@ -1,4 +1,4 @@
-require 'ft-ffi/struct/face_rec'
+require_relative 'face_rec'
 
 module FT
   class FT_Prop_IncreaseXHeight < FFIAdditions::Struct

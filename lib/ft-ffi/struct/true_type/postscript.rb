@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-truetype_tables.html#TT_Postscript
   class TT_Postscript < FFIAdditions::Struct

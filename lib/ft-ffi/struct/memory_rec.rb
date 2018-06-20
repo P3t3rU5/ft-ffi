@@ -1,4 +1,4 @@
-require 'ft-ffi'
+require_relative 'memory_rec'
 
 module FT
   # MemoryRec

@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   OutlineFlag = enum :outline_flag, [
       :NONE,              0x0,

@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   ValidateOpenType = enum :validate_open_type, [
      :BASE, 0x0100,

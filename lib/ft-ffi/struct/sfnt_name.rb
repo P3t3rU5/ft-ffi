@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-sfnt_names.html#FT_SfntName
   class SfntName < FFIAdditions::Struct

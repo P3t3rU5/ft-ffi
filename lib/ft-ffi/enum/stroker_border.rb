@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   StrokerBorder = enum :stroker_border, [
       :LEFT, 0,

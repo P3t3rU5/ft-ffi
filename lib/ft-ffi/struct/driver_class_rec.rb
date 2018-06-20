@@ -1,10 +1,10 @@
-require 'ft-ffi/struct/stream_rec'
-require 'ft-ffi/struct/face_rec'
-require 'ft-ffi/struct/parameter'
-require 'ft-ffi/struct/size_rec'
-require 'ft-ffi/struct/glyph/glyph_slot_rec'
-require 'ft-ffi/struct/vector'
-require 'ft-ffi/enum/size_request_type'
+require_relative 'stream_rec'
+require_relative 'face_rec'
+require_relative 'parameter'
+require_relative 'size_rec'
+require_relative 'glyph/glyph_slot_rec'
+require_relative 'vector'
+require_relative '../enum/size_request_type'
 
 module FT
   Face_InitFunc = callback 'Face_InitFunc', [StreamRec.ptr, FaceRec.ptr, :FT_Int, :FT_Int, Parameter.ptr], :FT_Error

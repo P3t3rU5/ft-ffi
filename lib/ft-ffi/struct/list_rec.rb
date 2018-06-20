@@ -1,4 +1,4 @@
-require 'ft-ffi/struct/list_node_rec'
+require_relative 'list_node_rec'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-list_processing.html#FT_ListRec

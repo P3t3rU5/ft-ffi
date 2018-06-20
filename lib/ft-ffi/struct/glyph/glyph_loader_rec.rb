@@ -1,5 +1,5 @@
-require 'ft-ffi/struct/memory_rec'
-require 'ft-ffi/struct/glyph/glyph_load_rec'
+require_relative '../memory_rec'
+require_relative 'glyph_load_rec'
 
 module FT
   class GlyphLoaderRec < FFIAdditions::Struct

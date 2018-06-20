@@ -1,4 +1,4 @@
-require 'ft-ffi/enum/validation_level'
+require_relative '../enum/validation_level'
 
 module FT
   class ValidatorRec < FFIAdditions::Struct

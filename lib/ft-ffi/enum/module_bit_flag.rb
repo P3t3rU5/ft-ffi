@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   ModuleBitFlag = enum :module_bit_flag, [
       :FONT_DRIVER,              1,

@@ -1,4 +1,4 @@
-require 'ft-ffi/typedef/ftc_face_id'
+require_relative '../typedef/ftc_face_id'
 
 module FT
   class FTC_ScalerRec < FFIAdditions::Struct

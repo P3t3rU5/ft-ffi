@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-truetype_tables.html#TT_MAC_ID_XXX
   MacId = enum :mac_id, [

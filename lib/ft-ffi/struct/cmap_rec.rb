@@ -1,5 +1,5 @@
-require 'ft-ffi/struct/char_map_rec'
-require 'ft-ffi/struct/cmap_class_rec'
+require_relative 'char_map_rec'
+require_relative 'cmap_class_rec'
 
 module FT
   # internal charmap object structure

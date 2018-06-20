@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   class << self
     # https://www.freetype.org/freetype2/docs/reference/ft2-basic_types.html#FT_MAKE_TAG

@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   OpenArgsFlag = enum :open_args_flag, [
       :MEMORY,   0x1,

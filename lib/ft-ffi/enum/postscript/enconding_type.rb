@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   EncodingType = enum :enconding_type, [
       :NONE, 0,

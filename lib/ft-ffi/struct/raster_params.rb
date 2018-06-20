@@ -1,8 +1,7 @@
-require 'ft-ffi/enum/raster_params_flag'
-
-require 'ft-ffi/struct/bitmap'
-require 'ft-ffi/struct/bbox'
-require 'ft-ffi/struct/span'
+require_relative '../enum/raster_params_flag'
+require_relative 'bitmap'
+require_relative 'bbox'
+require_relative 'span'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-raster.html#FT_SpanFunc

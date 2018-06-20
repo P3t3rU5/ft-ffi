@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-type1_tables.html#T1_Blend_Flags
   BlendFlags = enum :blend_flags, [

@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-basic_types.html#FT_Glyph_Format
   GlyphFormat = enum ULong, :glyph_format, [

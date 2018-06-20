@@ -1,4 +1,4 @@
-require 'ft-ffi/enum/outline_flag'
+require_relative '../enum/outline_flag'
 
 module FT
   class Outline < FFIAdditions::Struct

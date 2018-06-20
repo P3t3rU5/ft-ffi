@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   AutohinterScript = enum :autohinter_script, [
       :NONE,   0,

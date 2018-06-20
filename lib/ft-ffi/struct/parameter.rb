@@ -1,4 +1,4 @@
-require 'ft-ffi/struct/data'
+require_relative 'data'
 
 module FT
 

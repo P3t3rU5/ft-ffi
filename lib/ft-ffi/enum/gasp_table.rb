@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-gasp_table.html#FT_GASP_XXX
   GaspTable = enum :gasp_table, [

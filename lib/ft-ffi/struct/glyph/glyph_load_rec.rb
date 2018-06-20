@@ -1,6 +1,6 @@
-require 'ft-ffi/struct/outline'
-require 'ft-ffi/struct/vector'
-require 'ft-ffi/struct/sub_glyph_rec'
+require_relative '../outline'
+require_relative '../vector'
+require_relative '../sub_glyph_rec'
 
 module FT
   class GlyphLoadRec < FFIAdditions::Struct

@@ -1,5 +1,5 @@
-require 'ft-ffi/struct/glyph/glyph_slot_rec'
-require 'ft-ffi/struct/matrix'
+require_relative '../struct/glyph/glyph_slot_rec'
+require_relative '../struct/matrix'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Get_SubGlyph_Info

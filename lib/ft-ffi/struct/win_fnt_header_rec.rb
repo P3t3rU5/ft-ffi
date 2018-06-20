@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-winfnt_fonts.html#FT_WinFNT_HeaderRec
   class WinFNT_HeaderRec < FFIAdditions::Struct

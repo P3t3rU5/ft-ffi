@@ -1,4 +1,4 @@
-require 'ft-ffi/enum/pixel_mode'
+require_relative '../enum/pixel_mode'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-basic_types.html#FT_Bitmap

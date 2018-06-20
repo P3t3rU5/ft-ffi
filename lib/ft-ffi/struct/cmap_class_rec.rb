@@ -1,4 +1,4 @@
-require 'ft-ffi/struct/memory_rec'
+require_relative 'memory_rec'
 
 module FT
 

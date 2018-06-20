@@ -1,4 +1,4 @@
-require 'ft-ffi/struct/bitmap'
+require_relative 'bitmap'
 
 module FT
   class BitmapGlyphRec < FFIAdditions::Struct

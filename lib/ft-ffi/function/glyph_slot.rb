@@ -1,5 +1,5 @@
-require 'ft-ffi/struct/glyph/glyph_slot_rec'
-require 'ft-ffi/enum/render_mode'
+require_relative '../struct/glyph/glyph_slot_rec'
+require_relative '../enum/render_mode'
 
 module FT
   # void FT_GlyphSlot_Embolden( FT_GlyphSlot  slot );

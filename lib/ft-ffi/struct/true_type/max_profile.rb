@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   class TT_MaxProfile < FFIAdditions::Struct
     layout version:                :FT_Fixed,

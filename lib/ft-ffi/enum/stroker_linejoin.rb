@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   Stroker_LineJoin = enum :stroker_line_join, [
       :ROUND,          0,

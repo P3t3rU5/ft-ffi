@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   SizeRequestType = enum :size_request_type, [
       :NOMINAL,

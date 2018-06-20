@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   class ServiceCacheRec < FFIAdditions::Struct
     layout service_POSTSCRIPT_FONT_NAME: :FT_Pointer,

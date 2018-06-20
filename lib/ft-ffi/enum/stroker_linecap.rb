@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   Stroker_LineCap = enum :Stroker_LineCap, [
       :BUTT, 0,

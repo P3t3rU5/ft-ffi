@@ -1,4 +1,4 @@
-require 'ft-ffi/struct/incremental_funcs_rec'
+require_relative 'incremental_funcs_rec'
 
 module FT
   class Incremental_InterfaceRec < FFIAdditions::Struct

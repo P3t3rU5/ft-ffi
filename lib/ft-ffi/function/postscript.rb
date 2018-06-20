@@ -1,7 +1,7 @@
-require 'ft-ffi/struct/face_rec'
-require 'ft-ffi/struct/postscript/font_info_rec'
-require 'ft-ffi/struct/postscript/private_rec'
-require 'ft-ffi/enum/postscript/dict_keys'
+require_relative '../struct/face_rec'
+require_relative '../struct/postscript/font_info_rec'
+require_relative '../struct/postscript/private_rec'
+require_relative '../enum/postscript/dict_keys'
 
 module FT
 

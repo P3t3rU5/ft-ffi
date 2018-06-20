@@ -1,8 +1,7 @@
-require 'ft-ffi'
-require 'ft-ffi/struct/glyph/glyph_rec'
-require 'ft-ffi/enum/stroker_linecap'
-require 'ft-ffi/enum/stroker_linejoin'
-require 'ft-ffi/enum/stroker_border'
+require_relative '../struct/glyph/glyph_rec'
+require_relative '../enum/stroker_linecap'
+require_relative '../enum/stroker_linejoin'
+require_relative '../enum/stroker_border'
 
 module FT
 

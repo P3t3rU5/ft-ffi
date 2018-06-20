@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Glyph_Metrics
   class Glyph_Metrics < FFIAdditions::Struct

@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   RasterParamsFlag = enum :raster_params_flag, [
       :DEFAULT, 0x0,

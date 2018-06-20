@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   Encoding = enum :encoding, [
       :MS_SYMBOL,      0x73796d62, #'symb'

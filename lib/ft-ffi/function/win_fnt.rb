@@ -1,6 +1,5 @@
-require 'ft-ffi'
-require 'ft-ffi/struct/face_rec'
-require 'ft-ffi/struct/win_fnt_header_rec'
+require_relative '../struct/face_rec'
+require_relative '../struct/win_fnt_header_rec'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-winfnt_fonts.html#FT_Get_WinFNT_Header

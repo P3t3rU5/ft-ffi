@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   TrueTypeEngineType = enum :true_type_engine_type, [
       :NONE,

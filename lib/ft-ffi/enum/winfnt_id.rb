@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   WinFNT_ID_XXX = enum :win_fnt_id_xxx, [
       :CP1252,    0,

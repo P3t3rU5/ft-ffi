@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   # Pixel Mode Enum
   # https://www.freetype.org/freetype2/docs/reference/ft2-basic_types.html#FT_Pixel_Mode

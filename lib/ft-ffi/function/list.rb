@@ -1,6 +1,6 @@
-require 'ft-ffi/struct/list_rec'
-require 'ft-ffi/struct/list_node_rec'
-require 'ft-ffi/struct/memory_rec'
+require_relative '../struct/list_rec'
+require_relative '../struct/list_node_rec'
+require_relative '../struct/memory_rec'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-list_processing.html#FT_List_Destructor

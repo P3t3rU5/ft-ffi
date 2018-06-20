@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   # /* typecast an object to an FT_Module */
   #define FT_MODULE( x )          ((FT_Module)( x ))

@@ -1,4 +1,4 @@
-require 'ft-ffi/typedef/ftc_face_id'
+require_relative '../typedef/ftc_face_id'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-cache_subsystem.html#FTC_ImageTypeRec

@@ -1,8 +1,7 @@
-require 'ft-ffi/enum/slot_internal_flag'
-
-require 'ft-ffi/struct/glyph/glyph_loader_rec'
-require 'ft-ffi/struct/vector'
-require 'ft-ffi/struct/matrix'
+require_relative '../enum/slot_internal_flag'
+require_relative 'glyph/glyph_loader_rec'
+require_relative 'vector'
+require_relative 'matrix'
 
 module FT
   class Slot_InternalRec < FFIAdditions::Struct

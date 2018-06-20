@@ -1,8 +1,8 @@
-require 'ft-ffi/struct/glyph/glyph_rec'
-require 'ft-ffi/struct/ftc_sbit_rec'
-require 'ft-ffi/typedef/ftc_face_id'
-require 'ft-ffi/struct/ftc_image_type_rec'
-require 'ft-ffi/struct/ftc_scaler_rec'
+require_relative '../struct/glyph/glyph_rec'
+require_relative '../struct/ftc_sbit_rec'
+require_relative '../struct/ftc_image_type_rec'
+require_relative '../struct/ftc_scaler_rec'
+require_relative '../typedef/ftc_face_id'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-cache_subsystem.html#FTC_CMapCache

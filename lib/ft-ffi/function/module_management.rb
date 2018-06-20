@@ -1,6 +1,6 @@
-require 'ft-ffi/struct/module_class'
-require 'ft-ffi/enum/glyph_format'
-require 'ft-ffi/struct/list_node_rec'
+require_relative '../enum/glyph_format'
+require_relative '../struct/module_class'
+require_relative '../struct/list_node_rec'
 
 module FT
   typedef :pointer, :FT_Module
@@ -82,17 +82,4 @@ module FT
   #   FT_UInt            hook_index,
   #   FT_DebugHook_Func  debug_hook )
   attach_function 'Set_Debug_Hook', 'FT_Set_Debug_Hook', [LibraryRec.by_ref, :FT_UInt, DebugHook_Func], :void
-
-  # Not Documented
-  # FT_Renderer FT_Lookup_Renderer(
-  #   FT_Library       library,
-  #   FT_Glyph_Format  format,
-  #   FT_ListNode*     node );
-  attach_function 'Lookup_Renderer', 'FT_Lookup_Renderer', [LibraryRec.ptr, GlyphFormat, ListNodeRec.ptr], :pointer
-
-  # FT_Pointer ft_module_get_service( FT_Module module, const char*  service_id );
-  attach_function 'module_get_service', 'ft_module_get_service', [ModuleRec.ptr, :pointer], :FT_Pointer
-
-  # const void* FT_Get_Module_Interface( FT_Library   library, const char*  mod_name );
-  attach_function 'Get_Module_Interface', 'FT_Get_Module_Interface', [LibraryRec.ptr(:in), :pointer], :pointer
 end

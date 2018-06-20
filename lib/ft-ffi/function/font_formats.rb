@@ -1,4 +1,4 @@
-require 'ft-ffi/struct/face_rec'
+require_relative '../struct/face_rec'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-font_formats.html#FT_Get_Font_Format

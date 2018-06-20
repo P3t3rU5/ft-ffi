@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   class TT_PCLT < FFIAdditions::Struct
     layout Version:                :FT_Fixed,

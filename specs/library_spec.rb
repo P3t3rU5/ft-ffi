@@ -1,7 +1,5 @@
-require 'rspec'
-require_relative '../test/test_helper'
-require 'ft-ffi'
-require 'ft-ffi/function/library'
+require_relative 'spec_helper'
+require_relative '../lib/ft-ffi/function/library'
 
 include FT
 

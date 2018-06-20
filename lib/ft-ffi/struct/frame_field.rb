@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   class Frame_Field < FFIAdditions::Struct
     layout value:    :FT_Byte,

@@ -1,8 +1,8 @@
-require 'ft-ffi/struct/outline'
-require 'ft-ffi/struct/outline_funcs'
-require 'ft-ffi/struct/library_rec'
-require 'ft-ffi/struct/bitmap'
-require 'ft-ffi/struct/matrix'
+require_relative '../struct/outline'
+require_relative '../struct/outline_funcs'
+require_relative '../struct/library_rec'
+require_relative '../struct/bitmap'
+require_relative '../struct/matrix'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-outline_processing.html#FT_Outline_Check

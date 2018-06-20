@@ -1,5 +1,5 @@
-require 'ft-ffi/struct/stream_desc'
-require 'ft-ffi/struct/memory_rec'
+require_relative 'stream_desc'
+require_relative 'memory_rec'
 
 module FT
   class StreamRec < FFIAdditions::Struct; end

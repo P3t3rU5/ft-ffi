@@ -1,5 +1,5 @@
-require 'ft-ffi/struct/face_rec'
-require 'ft-ffi/struct/size_rec'
+require_relative '../struct/face_rec'
+require_relative '../struct/size_rec'
 
 module FT
   # Size Management

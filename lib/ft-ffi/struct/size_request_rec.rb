@@ -1,4 +1,4 @@
-require 'ft-ffi/enum/size_request_type'
+require_relative '../enum/size_request_type'
 
 module FT
   class Size_RequestRec < FFIAdditions::Struct

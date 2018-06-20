@@ -1,12 +1,11 @@
-require 'ft-ffi/enum/kerning_mode'
-require 'ft-ffi/enum/load_flag'
-require 'ft-ffi/enum/encoding'
-
-require 'ft-ffi/struct/open_args'
-require 'ft-ffi/struct/face_rec'
-require 'ft-ffi/struct/library_rec'
-require 'ft-ffi/struct/sfnt_name'
-require 'ft-ffi/struct/size_request_rec'
+require_relative '../enum/kerning_mode'
+require_relative '../enum/load_flag'
+require_relative '../enum/encoding'
+require_relative '../struct/open_args'
+require_relative '../struct/face_rec'
+require_relative '../struct/library_rec'
+require_relative '../struct/sfnt_name'
+require_relative '../struct/size_request_rec'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Attach_File

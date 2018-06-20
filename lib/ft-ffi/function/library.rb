@@ -1,4 +1,4 @@
-require 'ft-ffi/struct/library_rec'
+require_relative '../struct/library_rec'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Done_FreeType

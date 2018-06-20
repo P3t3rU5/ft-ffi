@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   CFFHinting = enum :cff_hinting, [
     :FREETYPE, 0,

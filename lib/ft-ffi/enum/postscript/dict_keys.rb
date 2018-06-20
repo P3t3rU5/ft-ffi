@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-type1_tables.html#PS_Dict_Keys
   DictKeys = enum :dict_keys, [

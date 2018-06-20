@@ -1,5 +1,5 @@
-require 'ft-ffi/struct/vector'
-require 'ft-ffi/struct/matrix'
+require_relative '../struct/vector'
+require_relative '../struct/matrix'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-computations.html#FT_Angle
@@ -17,9 +17,6 @@ module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-computations.html#FT_MulDiv
   # FT_Long FT_MulDiv(FT_Long  a, FT_Long  b, FT_Long  c )
   attach_function 'MulDiv', 'FT_MulDiv', [:FT_Long, :FT_Long, :FT_Long], :FT_Long
-
-  # FT_Long FT_MulDiv_No_Round( FT_Long  a, FT_Long  b, FT_Long  c );
-  attach_function 'MulDiv_No_Round', 'FT_MulDiv_No_Round', [:FT_Long, :FT_Long, :FT_Long], :FT_Long
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-computations.html#FT_MulFix
   # FT_Long FT_MulFix( FT_Long  a, FT_Long  b )
@@ -41,16 +38,9 @@ module FT
   # FT_Fixed FT_FloorFix( FT_Fixed  a )
   attach_function 'FloorFix', 'FT_FloorFix', [:FT_Fixed], :FT_Fixed
 
-  # Return sqrt(x*x+y*y), which is the same as `FT_Vector_Length' but uses two fixed-point arguments instead.
-  # FT_Fixed FT_Hypot( FT_Fixed  x, FT_Fixed  y );
-  attach_function 'Hypot', 'FT_Hypot', [:FT_Fixed, :FT_Fixed], :FT_Fixed
-
   # https://www.freetype.org/freetype2/docs/reference/ft2-computations.html#FT_Vector_Transform
   # void FT_Vector_Transform(FT_Vector* vec, const FT_Matrix*  matrix )
   attach_function 'Vector_Transform', 'FT_Vector_Transform', [Vector.by_ref, Matrix.by_ref], :void
-
-  # void FT_Vector_Transform_Scaled( FT_Vector* vector, const FT_Matrix*  matrix, FT_Long scaling );
-  attach_function 'Vector_Transform_Scaled', 'FT_Vector_Transform_Scaled', [Vector.ptr, Matrix.ptr, :FT_Long], :void
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-computations.html#FT_Matrix_Multiply
   # void  FT_Matrix_Multiply(const FT_Matrix*  a,  FT_Matrix*        b )
@@ -92,9 +82,6 @@ module FT
   # FT_Fixed FT_Vector_Length( FT_Vector*  vec )
   attach_function 'Vector_Length', 'FT_Vector_Length', [Vector.by_ref], :FT_Fixed
 
-  # FT_UInt32 FT_Vector_NormLen( FT_Vector*  vector );
-  attach_function 'Vector_NormLen', 'FT_Vector_NormLen', [Vector.ptr], :FT_UInt32
-
   # https://www.freetype.org/freetype2/docs/reference/ft2-computations.html#FT_Vector_Polarize
   # void FT_Vector_Polarize(
   #  FT_Vector*  vec,
@@ -105,16 +92,4 @@ module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-computations.html#FT_Vector_From_Polar
   # void FT_Vector_From_Polar(FT_Vector*  vec, FT_Fixed    length,  FT_Angle    angle )
   attach_function 'Vector_From_Polar', 'FT_Vector_From_Polar', [Vector.by_ref, :FT_Fixed, :FT_Angle], :void
-
-  # void FT_Matrix_Multiply_Scaled( const FT_Matrix*  a, FT_Matrix *b, FT_Long scaling );
-  attach_function 'Matrix_Multiply_Scaled', 'FT_Matrix_Multiply_Scaled', [Matrix.ptr, Matrix.ptr, :FT_Long], :void
-
-  # FT_Int FT_MSB( FT_UInt32  z );
-  attach_function 'MSB', 'FT_MSB', [:FT_UInt], :FT_Int
-
-  # FT_Int ft_corner_is_flat( FT_Pos  in_x, FT_Pos  in_y, FT_Pos  out_x, FT_Pos  out_y );
-  attach_function 'corner_is_flat', 'ft_corner_is_flat', [:FT_Pos, :FT_Pos, :FT_Pos, :FT_Pos], :FT_Int
-
-  # FT_Int ft_corner_orientation( FT_Pos  in_x, FT_Pos  in_y, FT_Pos  out_x, FT_Pos  out_y );
-  attach_function 'corner_orientation', 'ft_corner_orientation', [:FT_Pos, :FT_Pos, :FT_Pos, :FT_Pos], :FT_Int
 end

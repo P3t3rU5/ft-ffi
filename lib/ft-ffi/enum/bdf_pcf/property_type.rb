@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   PropertyType = enum :property_type, [
       :NONE,     0,

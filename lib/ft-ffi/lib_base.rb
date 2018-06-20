@@ -1,7 +1,6 @@
 require 'ffi'
 require 'ffi-additions'
 require 'logger'
-require 'ft-ffi/version'
 
 module FT
   LOGGER = Logger.new(STDOUT)

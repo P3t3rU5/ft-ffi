@@ -1,6 +1,6 @@
-require 'ft-ffi/enum/glyph_format'
-require 'ft-ffi/struct/glyph/glyph_rec'
-require 'ft-ffi/struct/glyph/glyph_slot_rec'
+require_relative '../../enum/glyph_format'
+require_relative 'glyph_rec'
+require_relative 'glyph_slot_rec'
 
 module FT
   Glyph_InitFunc = callback 'Glyph_InitFunc', [GlyphRec, GlyphSlotRec], :FT_Error

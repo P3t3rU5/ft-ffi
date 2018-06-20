@@ -1,8 +1,7 @@
-require 'ft-ffi/struct/memory_rec'
-require 'ft-ffi/struct/module_rec'
-require 'ft-ffi/struct/list_rec'
-require 'ft-ffi/struct/renderer_rec'
-require 'ft-ffi/struct/library_rec'
+require_relative 'memory_rec'
+require_relative 'module_rec'
+require_relative 'list_rec'
+require_relative 'renderer_rec'
 
 module FT
 

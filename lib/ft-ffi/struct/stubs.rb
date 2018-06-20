@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   class LibraryRec < FFIAdditions::Struct; end
   class ModuleRec < FFIAdditions::Struct; end

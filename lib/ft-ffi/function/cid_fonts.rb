@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-cid_fonts.html#FT_Get_CID_Registry_Ordering_Supplement
   # FT_Error FT_Get_CID_Registry_Ordering_Supplement(

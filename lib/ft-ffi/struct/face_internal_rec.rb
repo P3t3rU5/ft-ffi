@@ -1,7 +1,7 @@
-require 'ft-ffi/struct/matrix'
-require 'ft-ffi/struct/vector'
-require 'ft-ffi/struct/service_cache_rec'
-require 'ft-ffi/struct/incremental_interface_rec'
+require_relative 'matrix'
+require_relative 'vector'
+require_relative 'service_cache_rec'
+require_relative 'incremental_interface_rec'
 
 module FT
   class Face_InternalRec < FFIAdditions::Struct

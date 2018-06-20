@@ -1,10 +1,9 @@
-require 'ft-ffi/enum/glyph_bbox_mode'
-require 'ft-ffi/enum/render_mode'
-
-require 'ft-ffi/struct/glyph/glyph_rec'
-require 'ft-ffi/struct/glyph/glyph_slot_rec'
-require 'ft-ffi/struct/vector'
-require 'ft-ffi/struct/matrix'
+require_relative '../enum/glyph_bbox_mode'
+require_relative '../enum/render_mode'
+require_relative '../struct/glyph/glyph_rec'
+require_relative '../struct/glyph/glyph_slot_rec'
+require_relative '../struct/vector'
+require_relative '../struct/matrix'
 
 module FT
   # Glyph Management

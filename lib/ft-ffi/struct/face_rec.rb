@@ -1,17 +1,16 @@
 require 'ffi-additions/struct'
 
-require 'ft-ffi/enum/face_flag'
-require 'ft-ffi/enum/style_flag'
-
-require 'ft-ffi/struct/bbox'
-require 'ft-ffi/struct/bitmap_size'
-require 'ft-ffi/struct/generic'
-require 'ft-ffi/struct/glyph/glyph_slot_rec'
-require 'ft-ffi/struct/size_rec'
-require 'ft-ffi/struct/char_map_rec'
-require 'ft-ffi/struct/driver_rec'
-require 'ft-ffi/struct/memory_rec'
-require 'ft-ffi/struct/face_internal_rec'
+require_relative '../enum/face_flag'
+require_relative '../enum/style_flag'
+require_relative 'bbox'
+require_relative 'bitmap_size'
+require_relative 'generic'
+require_relative 'glyph/glyph_slot_rec'
+require_relative 'size_rec'
+require_relative 'char_map_rec'
+require_relative 'driver_rec'
+require_relative 'memory_rec'
+require_relative 'face_internal_rec'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_FaceRec

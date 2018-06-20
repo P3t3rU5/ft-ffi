@@ -1,5 +1,5 @@
-require 'ft-ffi/struct/face_rec'
-require 'ft-ffi/struct/sfnt_name'
+require_relative '../struct/face_rec'
+require_relative '../struct/sfnt_name'
 
 module FT
   # SfntName

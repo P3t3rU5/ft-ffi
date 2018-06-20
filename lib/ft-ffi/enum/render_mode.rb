@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   RenderMode = enum :render_mode, [:NORMAL, 0, :LIGHT, :MONO, :LCD, :LCD_V, :MODE_MAX]
 

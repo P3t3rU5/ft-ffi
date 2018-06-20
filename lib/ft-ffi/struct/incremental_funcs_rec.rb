@@ -1,5 +1,5 @@
-require 'ft-ffi/struct/data'
-require 'ft-ffi/struct/incremental_metrics_rec'
+require_relative 'data'
+require_relative 'incremental_metrics_rec'
 
 module FT
   Incremental_GetGlyphDataFunc = callback 'Incremental_GetGlyphDataFunc', [:pointer, :FT_UInt, Data], :FT_Error

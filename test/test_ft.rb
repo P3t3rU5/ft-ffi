@@ -1,21 +1,19 @@
 require_relative 'test_helper'
 
 require 'ffi'
-require 'ft-ffi/function/library'
-require 'ft-ffi/function/face'
-
-include FT
+require_relative '../lib/ft-ffi/function/library'
+require_relative '../lib/ft-ffi/function/face'
 
 lib_pointer = FFI::MemoryPointer.new(:pointer)
 FT.Init_FreeType(lib_pointer)
-library = LibraryRec.new(lib_pointer.read_pointer)
+library = FT::LibraryRec.new(lib_pointer.read_pointer)
 
 filepathname = "arial.ttf"
 full_path = "C:\\Windows\\Fonts\\#{filepathname}"
 
 face_pointer = FFI::MemoryPointer.new(:pointer)
 FT.New_Face(library, full_path, 0, face_pointer)
-face = FaceRec.new(face_pointer.read_pointer)
+face = FT::FaceRec.new(face_pointer.read_pointer)
 
 width = 0
 height = 22

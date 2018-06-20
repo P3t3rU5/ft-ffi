@@ -1,4 +1,5 @@
-require 'ft-ffi'
+require_relative '../struct/stream_rec'
+require_relative '../struct/memory_rec'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-gzip.html

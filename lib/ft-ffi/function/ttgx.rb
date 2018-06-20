@@ -1,4 +1,4 @@
-require 'ft-ffi/struct/face_rec'
+require_relative '../struct/face_rec'
 
 module FT
   # http://www.freetype.org/freetype2/docs/reference/ft2-gx_validation.html

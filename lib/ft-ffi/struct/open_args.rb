@@ -1,6 +1,6 @@
-require 'ft-ffi/struct/stream_rec'
-require 'ft-ffi/struct/module_rec'
-require 'ft-ffi/enum/open_args_flag'
+require_relative '../struct/stream_rec'
+require_relative '../struct/module_rec'
+require_relative '../enum/open_args_flag'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Open_Args

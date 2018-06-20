@@ -1,5 +1,5 @@
-require 'ft-ffi/struct/face_rec'
-require 'ft-ffi/struct/multiple_masters/multi_master'
+require_relative '../struct/face_rec'
+require_relative '../struct/multiple_masters/multi_master'
 
 module FT
 

@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   ValidationLevel = enum :validation_level, [
       :DEFAULT, 0,

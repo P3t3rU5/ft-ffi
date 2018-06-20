@@ -1,5 +1,5 @@
-require 'ft-ffi/enum/sfnt_tag'
-require 'ft-ffi/struct/library_rec'
+require_relative '../enum/sfnt_tag'
+require_relative '../struct/library_rec'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-truetype_tables.html#FT_Get_Sfnt_Table

@@ -1,8 +1,6 @@
-require 'rspec'
-require_relative '../test/test_helper'
-require 'ft-ffi'
-require 'ft-ffi/function/library'
-require 'ft-ffi/function/face'
+require_relative 'spec_helper'
+require_relative '../lib/ft-ffi/function/library'
+require_relative '../lib/ft-ffi/function/face'
 
 include FT
 
@@ -19,7 +17,5 @@ RSpec.describe 'Face' do
       expect(face).to be_a FaceRec
     end
   end
-
-  
 
 end

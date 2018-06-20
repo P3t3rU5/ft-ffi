@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_SUBGLYPH_FLAG_XXX
   SUBGLYPH_FLAG_XXX = enum :subglyph_flag_xxx, [

@@ -1,8 +1,7 @@
-require 'ft-ffi/enum/glyph_format'
-
-require 'ft-ffi/struct/module_rec'
-require 'ft-ffi/struct/renderer_class'
-require 'ft-ffi/struct/glyph/glyph_class'
+require_relative '../enum/glyph_format'
+require_relative 'module_rec'
+require_relative 'renderer_class'
+require_relative 'glyph/glyph_class'
 
 module FT
   # Raster_RenderFunc = callback 'Raster_RenderFunc', [:pointer, Raster_Params], :int

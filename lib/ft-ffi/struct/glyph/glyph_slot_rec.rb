@@ -1,13 +1,12 @@
-require 'ft-ffi/enum/glyph_format'
-
-require 'ft-ffi/struct/library_rec'
-require 'ft-ffi/struct/face_rec'
-require 'ft-ffi/struct/glyph/glyph_rec'
-require 'ft-ffi/struct/bitmap'
-require 'ft-ffi/struct/outline'
-require 'ft-ffi/struct/sub_glyph_rec'
-require 'ft-ffi/struct/slot_internal_rec'
-require 'ft-ffi/struct/glyph/glyph_metrics'
+require_relative '../../enum/glyph_format'
+require_relative '../library_rec'
+require_relative '../face_rec'
+require_relative '../bitmap'
+require_relative '../outline'
+require_relative '../sub_glyph_rec'
+require_relative '../slot_internal_rec'
+require_relative 'glyph_rec'
+require_relative 'glyph_metrics'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_GlyphSlotRec

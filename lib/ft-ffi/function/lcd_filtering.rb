@@ -1,4 +1,4 @@
-require 'ft-ffi/enum/lcd_filter'
+require_relative '../enum/lcd_filter'
 
 module FT
   # LCD Filtering

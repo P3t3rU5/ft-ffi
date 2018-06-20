@@ -1,5 +1,5 @@
-require 'ft-ffi/enum/module_bit_flag'
-require 'ft-ffi/struct/module_rec'
+require_relative '../enum/module_bit_flag'
+require_relative 'module_rec'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-module_management.html#FT_Module_Constructor

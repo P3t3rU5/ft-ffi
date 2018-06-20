@@ -1,4 +1,4 @@
-require 'ft-ffi/enum/bdf_pcf/property_type'
+require_relative '../../enum/bdf_pcf/property_type'
 
 module FT
   class PropertyRecUnion < FFIAdditions::Struct

@@ -1,5 +1,5 @@
-require 'ft-ffi/enum/glyph_format'
-require 'ft-ffi/struct/raster_params'
+require_relative '../enum/glyph_format'
+require_relative 'raster_params'
 
 module FT
   Raster_NewFunc = callback 'Raster_NewFunc', [:pointer, :pointer], :int

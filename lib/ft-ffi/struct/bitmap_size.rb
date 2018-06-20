@@ -1,5 +1,3 @@
-require 'ft-ffi'
-
 module FT
   class Bitmap_Size < FFIAdditions::Struct
     layout height: :FT_Short,

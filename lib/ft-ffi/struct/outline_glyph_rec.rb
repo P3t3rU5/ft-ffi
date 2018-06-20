@@ -1,5 +1,5 @@
-require 'ft-ffi/struct/glyph/glyph_rec'
-require 'ft-ffi/struct/outline'
+require_relative 'glyph/glyph_rec'
+require_relative 'outline'
 
 module FT
   class OutlineGlyphRec < FFIAdditions::Struct

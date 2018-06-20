@@ -1,6 +1,6 @@
-require 'ft-ffi/struct/face_rec'
-require 'ft-ffi/struct/generic'
-require 'ft-ffi/struct/size_metrics'
+require_relative 'face_rec'
+require_relative 'generic'
+require_relative 'size_metrics'
 
 module FT
   class SizeRec < FFIAdditions::Struct
