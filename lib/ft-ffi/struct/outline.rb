@@ -5,7 +5,7 @@ module FT
     layout n_contours: :short,
            n_points:   :short,
 
-           points:   :pointer, # array of Vector"
+           points:   :pointer, # array of Vector
            tags:     :pointer,
            contours: :pointer,
 

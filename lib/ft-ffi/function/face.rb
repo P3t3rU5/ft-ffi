@@ -44,7 +44,8 @@ module FT
   #    const char* filepathname,
   #    FT_Long     face_index,
   #    FT_Face*    aface)
-  ft_function 'New_Face', LibraryRec.ptr, :string, :FT_Long, FaceRec.ptr(:out)
+  # ft_function 'New_Face', LibraryRec.ptr, :string, :FT_Long, FaceRec.ptr(:out)
+  ft_function 'New_Face', LibraryRec.ptr, :string, :FT_Long, :pointer
 
   ADVANCE_FLAG_FAST_ONLY = 0x20000000
 
@@ -94,14 +95,11 @@ module FT
   #     FT_ULong char_code,
   #     FT_UInt* agindex)
   attach_function 'Get_Next_Char', 'FT_Get_Next_Char', [FaceRec.ptr(:in), :FT_ULong, :pointer], :FT_ULong
+  # attach_function 'Get_Next_Char', 'FT_Get_Next_Char', [:pointer, :FT_ULong, :pointer], :FT_ULong
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Get_Name_Index
   # FT_UInt FT_Get_Name_Index( FT_Face face, FT_String*  glyph_name );
   attach_function 'Get_Name_Index', 'FT_Get_Name_Index', [FaceRec.ptr, :string], :FT_UInt
-
-  # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Get_Next_Char
-  # FT_ULong FT_Get_Next_Char( FT_Face    face, FT_ULong   char_code, FT_UInt   *agindex )
-  attach_function 'Get_Next_Char', 'FT_Get_Next_Char', [FaceRec.ptr, :FT_ULong, :FT_UInt], :FT_ULong
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Get_Postscript_Name
   # const char* FT_Get_Postscript_Name( FT_Face  face );
@@ -184,23 +182,9 @@ module FT
   # FT_Error FT_Get_BDF_Property( FT_Face face, const char* prop_name, BDF_PropertyRec  *aproperty )
   # ft_function 'Get_BDF_Property', FaceRec.ptr(:in), :string, PropertyRec.ptr(:out)
 
-  # Match a size request against `available_sizes'.
-  # FT_Error FT_Match_Size(
-  #   FT_Face          face,
-  #   FT_Size_Request  req,
-  #   FT_Bool          ignore_width,
-  #   FT_ULong*        size_index );
-  ft_function 'Match_Size', FaceRec.ptr, Size_RequestRec.ptr, :FT_Bool, :pointer
-
-  # void FT_Request_Metrics( FT_Face face, FT_Size_Request req );
-  attach_function 'Request_Metrics', 'FT_Request_Metrics', [FaceRec.ptr, Size_RequestRec.ptr], :void
-
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Request_Size
   # FT_Error FT_Request_Size( FT_Face face, FT_Size_Request req );
   ft_function 'Request_Size', FaceRec.ptr, Size_RequestRec.ptr(:in)
-
-  # void FT_Select_Metrics( FT_Face   face, FT_ULong  strike_index );
-  attach_function 'Select_Metrics', 'FT_Select_Metrics', [FaceRec.ptr, :FT_ULong], :void
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Select_Size
   # FT_Error FT_Select_Size( FT_Face  face, FT_Int   strike_index );

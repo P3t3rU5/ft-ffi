@@ -12,12 +12,12 @@ module FT
            vertBearingY: :FT_Pos,
            vertAdvance:  :FT_Pos
 
-    def to_s
-      inspect
-    end
-
-    def inspect
-      members.map { |member| "#{member.inspect} = #{self[member]}" }.join(', ')
-    end
+    # def to_s
+    #   inspect
+    # end
+    #
+    # def inspect
+    #   members.map { |member| "#{member.inspect} = #{self[member]}" }.join(', ')
+    # end
   end
 end

@@ -3,7 +3,7 @@ require 'ft-ffi'
 module FT
   # Pixel Mode Enum
   # https://www.freetype.org/freetype2/docs/reference/ft2-basic_types.html#FT_Pixel_Mode
-  PixelMode = enum :pixel_mode, [
+  PixelMode = enum FFI.find_type(:uchar), :pixel_mode, [
       :PIXEL_MODE_NONE,
       :PIXEL_MODE_MONO,
       :PIXEL_MODE_GRAY,

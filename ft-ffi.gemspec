@@ -1,7 +1,7 @@
-require_relative 'lib/ft/version'
+require_relative 'lib/ft-ffi/version'
 
 Gem::Specification.new do |s|
-  s.name          = 'ft-ffi-ffi'
+  s.name          = 'ft-ffi'
   s.version       = FT::VERSION
   s.summary       = 'FFI wrapper for FreeType API'
   s.description   = 'FFI wrapper for FreeType API.'
@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
   s.require_paths = %w'lib'
   s.files         = Dir['{lib/**/*.rb,*.md}']
   s.add_dependency 'ffi-additions'
+  s.add_development_dependency 'rspec', '~> 3'
   s.post_install_message = <<-eos
 +----------------------------------------------------------------------------+
   Thanks for choosing FreeTypeFFI.

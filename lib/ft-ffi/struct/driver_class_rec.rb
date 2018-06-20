@@ -7,8 +7,6 @@ require 'ft-ffi/struct/vector'
 require 'ft-ffi/enum/size_request_type'
 
 module FT
-  class GlyphSlotRec < FFIAdditions::Struct; end
-
   Face_InitFunc = callback 'Face_InitFunc', [StreamRec.ptr, FaceRec.ptr, :FT_Int, :FT_Int, Parameter.ptr], :FT_Error
   Face_DoneFunc = callback 'Face_DoneFunc', [FaceRec.ptr], :void
   Size_InitFunc = callback 'Size_InitFunc', [SizeRec.ptr], :FT_Error

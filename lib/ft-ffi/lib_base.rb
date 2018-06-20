@@ -11,7 +11,8 @@ module FT
 
     extend FFI::Library
     ffi_convention :cdecl
-    ffi_lib Dir[File.expand_path('../../freetype*.dll', __FILE__)].map { |f| [f.scan(/\d+/).last.to_i, f] }.max[1]
+
+    ffi_lib File.expand_path('../../platform/windows/win32/freetype.dll', __FILE__)
 
     # Basic Data Types
     # http://www.freetype.org/freetype2/docs/reference/ft2-basic_types.html
@@ -45,11 +46,11 @@ module FT
     # https://www.freetype.org/freetype2/docs/reference/ft2-basic_types.html#FT_Short
     typedef :short,   :FT_Short
     # https://www.freetype.org/freetype2/docs/reference/ft2-basic_types.html#FT_UShort
-    typedef :ushort,  :FT_UShort
+    ::FT::UShort = typedef :ushort,  :FT_UShort
     # https://www.freetype.org/freetype2/docs/reference/ft2-basic_types.html#FT_Long
-    typedef :long,    :FT_Long
+    ::FT::Long = typedef :long,    :FT_Long
     # https://www.freetype.org/freetype2/docs/reference/ft2-basic_types.html#FT_ULong
-    typedef :ulong,   :FT_ULong
+    ::FT::ULong = typedef :ulong,   :FT_ULong
     # https://www.freetype.org/freetype2/docs/reference/ft2-basic_types.html#FT_Bool
     typedef :bool,    :FT_Bool
     # https://www.freetype.org/freetype2/docs/reference/ft2-basic_types.html#FT_Offset
@@ -173,7 +174,6 @@ module FT
       function_name = "FT_#{method_name}"
       attach_function function_name, args, :FT_Error
       (class << self; self end).send('define_method', method_name) do |*args2|
-        LOGGER.debug method_name
         error = send(function_name, *args2)
         return if error == 0
         msg = "#{function_name} api returned error code 0x#{error.to_s(16)}"
@@ -194,7 +194,7 @@ module FT
       c.extend FFI::Library
       instance_variables.each do |v|
         value = instance_variable_get(v)
-        value = value.dup unless value.is_a?(Fixnum) || value.is_a?(Symbol)
+        value = value.dup unless value.is_a?(Integer) || value.is_a?(Symbol)
         c.instance_variable_set(v, value)
       end
     end

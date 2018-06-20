@@ -2,7 +2,7 @@ require 'ft-ffi'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_FACE_FLAG_XXX
-  FaceFlag = enum :face_flag, [
+  FaceFlag = enum Long, :face_flag, [
       :SCALABLE,         0x0001,
       :FIXED_SIZES,      0x0002,
       :FIXED_WIDTH,      0x0004,

@@ -11,16 +11,16 @@ module FT
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-module_management.html#FT_Module_Class
   class Module_Class < FFIAdditions::Struct
-    layout  :module_flags,     ModuleBitFlag,
-            :module_size,           :FT_Long,
-            :module_name,            :string,
-            :module_version,       :FT_Fixed,
-            :module_requires,      :FT_Fixed,
+    layout  module_flags:     ModuleBitFlag,
+            module_size:      :FT_Long,
+            module_name:      :string,
+            module_version:   :FT_Fixed,
+            module_requires:  :FT_Fixed,
 
-            :module_interface,      :pointer,
+            module_interface: :pointer,
 
-            :module_init, Module_Constructor,
-            :module_done,  Module_Destructor,
-            :get_interface, Module_Requester
+            module_init:      Module_Constructor,
+            module_done:      Module_Destructor,
+            get_interface:    Module_Requester
   end
 end

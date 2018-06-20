@@ -11,13 +11,13 @@ module FT
   Glyph_PrepareFunc = callback 'Glyph_PrepareFunc', [GlyphRec, GlyphSlotRec], :FT_Error
 
   class GlyphClass < FFIAdditions::Struct
-    layout glyph_size:                 :FT_Long,
-           glyph_format:            GlyphFormat,
-           glyph_init:           Glyph_InitFunc,
-           glyph_done:           Glyph_DoneFunc,
-           glyph_copy:           Glyph_CopyFunc,
+    layout glyph_size:      :FT_Long,
+           glyph_format:    GlyphFormat,
+           glyph_init:      Glyph_InitFunc,
+           glyph_done:      Glyph_DoneFunc,
+           glyph_copy:      Glyph_CopyFunc,
            glyph_transform: Glyph_TransformFunc,
-           glyph_bbox:        Glyph_GetBBoxFunc,
-           glyph_prepare:     Glyph_PrepareFunc
+           glyph_bbox:      Glyph_GetBBoxFunc,
+           glyph_prepare:   Glyph_PrepareFunc
   end
 end

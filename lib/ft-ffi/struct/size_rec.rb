@@ -4,10 +4,10 @@ require 'ft-ffi/struct/size_metrics'
 
 module FT
   class SizeRec < FFIAdditions::Struct
-    layout face:          FaceRec.ptr,
-           generic:       Generic.ptr,
-           metrics:  Size_Metrics.ptr,
-           internal:         :pointer
+    layout face:     FaceRec.ptr,
+           generic:  Generic,
+           metrics:  Size_Metrics,
+           internal: :pointer
 
     def to_s
       inspect

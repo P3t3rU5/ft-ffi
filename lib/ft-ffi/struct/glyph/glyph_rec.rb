@@ -8,8 +8,8 @@ module FT
   class GlyphRec < FFIAdditions::Struct
     layout library:   LibraryRec.ptr,
            clazz:     GlyphClass.ptr,
-           format:       GlyphFormat,
-           advance:       Vector.ptr
+           format:    GlyphFormat,
+           advance:   Vector.ptr
 
     def to_s
       inspect
