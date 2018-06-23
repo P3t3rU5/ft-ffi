@@ -1,5 +1,5 @@
-require_relative '../struct/list_rec'
-require_relative '../struct/list_node_rec'
+require_relative '../struct/list/rec'
+require_relative '../struct/list/node_rec'
 require_relative '../struct/memory_rec'
 
 module FT
@@ -19,7 +19,7 @@ module FT
   #   FT_List_Destructor  destroy,
   #   FT_Memory           memory,
   #   void*               user );
-  attach_function 'List_Finalize', 'FT_List_Finalize', [ListRec.ptr, List_Destructor, MemoryRec.ptr, :pointer], :void
+  attach_function 'List_Finalize', 'FT_List_Finalize', [ListRec.ptr, List_Destructor, MemoryRec.ptr(:in), :pointer], :void
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-list_processing.html#FT_List_Find
   # FT_ListNode FT_List_Find( FT_List  list, void*    data );

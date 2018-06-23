@@ -1,8 +1,8 @@
 require_relative '../enum/glyph_bbox_mode'
 require_relative '../enum/render_mode'
-require_relative '../struct/glyph/glyph_rec'
-require_relative '../struct/glyph/glyph_slot_rec'
-require_relative '../struct/vector'
+require_relative '../struct/glyph/rec'
+require_relative '../struct/glyph/slot_rec'
+require_relative '../struct/image/vector'
 require_relative '../struct/matrix'
 
 module FT

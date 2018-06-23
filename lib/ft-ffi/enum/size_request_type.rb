@@ -5,6 +5,7 @@ module FT
       :BBOX,
       :CELL,
       :SCALES,
+
       :MAX
   ]
 

@@ -14,5 +14,5 @@ module FT
       :DRIVER_HINTS_LIGHTLY, 0x800,
   ]
 
-  # define_prefix(:MODULE, ModuleBitFlag)
+  define_prefix(:MODULE, ModuleBitFlag)
 end

@@ -14,6 +14,10 @@ module FT
       :EXTERNAL_STREAM,  0x0400,
       :HINTER,           0x0800,
       :CID_KEYED,        0x1000,
-      :TRICKY,           0x2000
+      :TRICKY,           0x2000,
+      :COLOR,            0x4000,
+      :VARIATION,        0x8000
   ]
+
+  define_prefix(:FACE_FLAG, FaceFlag)
 end

@@ -2,11 +2,11 @@ require 'ffi-additions/struct'
 
 require_relative '../enum/face_flag'
 require_relative '../enum/style_flag'
-require_relative 'bbox'
-require_relative 'bitmap_size'
+require_relative 'image/bbox'
+require_relative 'image/bitmap_size'
 require_relative 'generic'
-require_relative 'glyph/glyph_slot_rec'
-require_relative 'size_rec'
+require_relative 'glyph/slot_rec'
+require_relative 'size/rec'
 require_relative 'char_map_rec'
 require_relative 'driver_rec'
 require_relative 'memory_rec'
@@ -54,9 +54,12 @@ module FT
            driver:              DriverRec.ptr,
            memory:              MemoryRec.ptr,
            stream:              StreamRec.ptr,
+
            sizes_list:          ListRec,
+
            autohint:            Generic,
            extensions:          :pointer,
+
            internal:            Face_InternalRec.ptr
 
     def inspect

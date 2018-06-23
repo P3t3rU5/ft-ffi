@@ -3,11 +3,11 @@ module FT
   Platform = enum UShort, :platform, [
       :APPLE_UNICODE, 0,
       :MACINTOSH,     1,
-      :ISO,           2,
+      :ISO,           2, # deprecated
       :MICROSOFT,     3,
       :CUSTOM,        4,
-      :ADOBE,         7,
+      :ADOBE,         7, # artificial
   ]
 
-  # define_prefix(:PLATFORM, Platform)
+  define_prefix(:TT_PLATFORM, Platform)
 end

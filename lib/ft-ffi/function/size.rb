@@ -1,5 +1,5 @@
 require_relative '../struct/face_rec'
-require_relative '../struct/size_rec'
+require_relative '../struct/size/rec'
 
 module FT
   # Size Management

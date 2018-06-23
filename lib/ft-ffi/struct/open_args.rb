@@ -1,5 +1,5 @@
-require_relative '../struct/stream_rec'
-require_relative '../struct/module_rec'
+require_relative '../struct/stream/rec'
+require_relative '../struct/module/rec'
 require_relative '../enum/open_args_flag'
 
 module FT
@@ -9,8 +9,8 @@ module FT
            memory_base: :pointer,
            memory_size: :FT_Long,
            pathname:    :string,
-           stream:      StreamRec,
-           driver:      ModuleRec,
+           stream:      StreamRec.ptr,
+           driver:      ModuleRec.ptr,
            num_params:  :FT_Int,
            params:      :pointer
   end

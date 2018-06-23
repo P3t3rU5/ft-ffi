@@ -1,6 +1,6 @@
 require_relative '../enum/slot_internal_flag'
-require_relative 'glyph/glyph_loader_rec'
-require_relative 'vector'
+require_relative 'glyph/loader_rec'
+require_relative 'image/vector'
 require_relative 'matrix'
 
 module FT

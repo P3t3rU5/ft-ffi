@@ -7,5 +7,5 @@ module FT
       :LATIN_1,  3,
   ]
 
-  # define_prefix(:ADOBE_ID, AdobeId)
+  define_prefix(:TT_ADOBE_ID, AdobeId)
 end

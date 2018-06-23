@@ -15,5 +15,5 @@ module FT
   #define FT_OUTLINE_POINTS_MAX    SHRT_MAX
   ]
 
-  #define_prefix(:OUTLINE, OutlineFlag)
+  define_prefix(:OUTLINE, OutlineFlag)
 end

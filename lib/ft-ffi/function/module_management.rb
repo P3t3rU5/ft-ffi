@@ -1,6 +1,6 @@
-require_relative '../enum/glyph_format'
-require_relative '../struct/module_class'
-require_relative '../struct/list_node_rec'
+require_relative '../enum/image/glyph_format'
+require_relative '../struct/module/class'
+require_relative '../struct/list/node_rec'
 
 module FT
   typedef :pointer, :FT_Module
@@ -46,6 +46,10 @@ module FT
   #   void*             value )
   ft_function 'Property_Get', LibraryRec.ptr(:in), :string, :string, :pointer
 
+  # https://www.freetype.org/freetype2/docs/reference/ft2-module_management.html#FT_Set_Default_Properties
+  # void FT_Set_Default_Properties( FT_Library  library );
+  attach_function 'Set_Default_Properties', 'FT_Set_Default_Properties', [LibraryRec.ptr], :void
+
   # https://www.freetype.org/freetype2/docs/reference/ft2-module_management.html#FT_New_Library
   # FT_New_Library( FT_Memory memory, FT_Library  *alibrary )
   ft_function 'New_Library', MemoryRec.ptr(:in), LibraryRec.ptr(:out)
@@ -76,10 +80,6 @@ module FT
   ft_function 'Set_Renderer', LibraryRec.ptr(:in), RendererRec.ptr(:in), :FT_UInt, Parameter.ptr(:in)
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-module_management.html#FT_Set_Debug_Hook
-  # FT_EXPORT( void )
-  # FT_Set_Debug_Hook(
-  #   FT_Library         library,
-  #   FT_UInt            hook_index,
-  #   FT_DebugHook_Func  debug_hook )
+  # void FT_Set_Debug_Hook(FT_Library library, FT_UInt hook_index, FT_DebugHook_Func  debug_hook )
   attach_function 'Set_Debug_Hook', 'FT_Set_Debug_Hook', [LibraryRec.by_ref, :FT_UInt, DebugHook_Func], :void
 end

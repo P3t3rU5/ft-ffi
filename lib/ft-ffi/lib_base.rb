@@ -11,7 +11,13 @@ module FT
     extend FFI::Library
     ffi_convention :cdecl
 
-    ffi_lib File.expand_path('../../platform/windows/win32/freetype.dll', __FILE__)
+    if FFI::Platform.windows?
+      lib = case FFI::Platform::ARCH # "i386" | "x86_64"
+        when "i386" then "win32"
+        when "x86_64" then "win64"
+      end
+      ffi_lib File.expand_path("../../platform/windows/#{lib}/freetype.dll", __FILE__)
+    end
 
     # Basic Data Types
     # http://www.freetype.org/freetype2/docs/reference/ft2-basic_types.html
@@ -150,12 +156,15 @@ module FT
         0x97 => [ :Invalid_PPem,                  'invalid ppem value' ],
         0x98 => [ :Invalid_Vert_Metrics,          'invalid vertical metrics' ],
         0x99 => [ :Could_Not_Find_Context,        'could not find context' ],
-        0x9A => [ :Invalid_Post_Table_Format,     'invalid PostScript (post table format' ],
-        0x9B => [ :Invalid_Post_Table,            'invalid PostScript (post table' ],
+        0x9A => [ :Invalid_Post_Table_Format,     'invalid PostScript (post) table format' ],
+        0x9B => [ :Invalid_Post_Table,            'invalid PostScript (post) table' ],
+        0x9C => [ :DEF_In_Glyf_Bytecode,          'found FDEF or IDEF opcode in glyf bytecode' ],
+        0x9D => [ :Missing_Bitmap,                'missing bitmap in strike' ],
         0xA0 => [ :Syntax_Error,                  'opcode syntax error' ],
         0xA1 => [ :Stack_Underflow,               'argument stack underflow' ],
         0xA2 => [ :Ignore,                        'ignore' ],
         0xA3 => [ :No_Unicode_Glyph_Name,         'no Unicode glyph name found' ],
+        0xA4 => [ :Glyph_Too_Big,                 'glyph too big for hinting' ],
         0xB0 => [ :Missing_Startfont_Field,       '`STARTFONT` field missing' ],
         0xB1 => [ :Missing_Font_Field,            '`FONT` field missing' ],
         0xB2 => [ :Missing_Size_Field,            '`SIZE` field missing' ],

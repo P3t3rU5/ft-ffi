@@ -6,7 +6,7 @@ module FT
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Parameter
   class Parameter < FFIAdditions::Struct
-    layout tag: :FT_ULong,
-           data:     Data
+    layout tag:  :FT_ULong,
+           data: Data
   end
 end

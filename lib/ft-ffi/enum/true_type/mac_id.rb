@@ -37,5 +37,5 @@ module FT
       :UNINTERP,            32,
   ]
 
-  # define_prefix(:MAC_ID, MacId)
+  define_prefix(:TT_MAC_ID, MacId)
 end

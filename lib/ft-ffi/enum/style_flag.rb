@@ -5,5 +5,5 @@ module FT
       :BOLD,    0x2
   ]
 
-  # define_prefix(:STYLE_FLAG, StyleFlag)
+  define_prefix(:STYLE_FLAG, StyleFlag)
 end

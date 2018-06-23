@@ -4,4 +4,6 @@ module FT
       :UNFITTED,
       :UNSCALED
   ]
+
+  define_prefix(:KERNING, KerningMode)
 end

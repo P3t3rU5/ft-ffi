@@ -7,5 +7,5 @@ module FT
       :EXPERT,
   ]
 
-  # define_prefix(:T1_ENCODING_TYPE, EncodingType)
+  define_prefix(:T1_ENCODING_TYPE, EncodingType)
 end

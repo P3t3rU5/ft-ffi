@@ -1,6 +1,6 @@
 module FT
   class TT_MaxProfile < FFIAdditions::Struct
-    layout version:                :FT_Fixed,
+    layout version:               :FT_Fixed,
            numGlyphs:             :FT_UShort,
            maxPoints:             :FT_UShort,
            maxContours:           :FT_UShort,

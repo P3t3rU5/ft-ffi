@@ -1,4 +1,4 @@
-require_relative '../struct/glyph/glyph_rec'
+require_relative '../struct/glyph/rec'
 require_relative '../struct/ftc_sbit_rec'
 require_relative '../struct/ftc_image_type_rec'
 require_relative '../struct/ftc_scaler_rec'
@@ -127,6 +127,4 @@ module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-cache_subsystem.html#FTC_SBitCache_New
   # FT_Error FTC_SBitCache_New( FTC_Manager manager, FTC_SBitCache  *acache );
   attach_function 'SBitCache_New', 'FTC_SBitCache_New', [:FTC_Manager, :FTC_SBitCache], :FT_Error
-
-
 end

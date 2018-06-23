@@ -1,4 +1,4 @@
-require_relative '../struct/vector'
+require_relative '../struct/image/vector'
 require_relative '../struct/matrix'
 
 module FT

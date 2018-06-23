@@ -4,8 +4,9 @@ require_relative '../enum/encoding'
 require_relative '../struct/open_args'
 require_relative '../struct/face_rec'
 require_relative '../struct/library_rec'
-require_relative '../struct/sfnt_name'
-require_relative '../struct/size_request_rec'
+require_relative '../struct/sfnt/name'
+require_relative '../struct/size/request_rec'
+require_relative '../struct/bdf/property_rec'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Attach_File
@@ -46,6 +47,11 @@ module FT
   # ft_function 'New_Face', LibraryRec.ptr, :string, :FT_Long, FaceRec.ptr(:out)
   ft_function 'New_Face', LibraryRec.ptr, :string, :FT_Long, :pointer
 
+  # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Face_Properties
+  # FT_Error FT_Face_Properties( FT_Face face, FT_UInt num_properties, FT_Parameter* properties );
+  ft_function 'Face_Properties', FaceRec.ptr(:in), :FT_UInt, :pointer
+
+  # TODO
   ADVANCE_FLAG_FAST_ONLY = 0x20000000
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-quick_advance.html#FT_Get_Advance
@@ -81,7 +87,7 @@ module FT
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Get_Kerning
   # FT_Error FT_Get_Kerning(
-  #     FT_Face    face,
+  #     FT_Face    face,FT_Get_Glyph
   #     FT_UInt    left_glyph,
   #     FT_UInt    right_glyph,
   #     FT_UInt    kern_mode,
@@ -105,17 +111,11 @@ module FT
   attach_function 'Get_Postscript_Name', 'FT_Get_Postscript_Name', [FaceRec.ptr(:in)], :pointer
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Load_Char
-  # FT_Error FT_Load_Char(
-  #          FT_Face  face,
-  #          FT_ULong char_code,
-  #          FT_Int32 load_flags)
+  # FT_Error FT_Load_Char(FT_Face  face, FT_ULong char_code, FT_Int32 load_flags)
   ft_function 'Load_Char', FaceRec.ptr(:in), :FT_ULong, LoadFlag
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Load_Glyph
-  # FT_Error FT_Load_Glyph(
-  #         FT_Face  face,
-  #         FT_UInt  glyph_index,
-  #         FT_Int32 load_flags)
+  # FT_Error FT_Load_Glyph(FT_Face  face, FT_UInt  glyph_index, FT_Int32 load_flags)
   ft_function 'Load_Glyph', FaceRec.ptr(:in), :FT_UInt, LoadFlag
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Set_Char_Size
@@ -128,10 +128,7 @@ module FT
   ft_function 'Set_Char_Size', FaceRec.ptr, :FT_F26Dot6, :FT_F26Dot6, :FT_UInt, :FT_UInt
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Set_Pixel_Sizes
-  # FT_Error FT_Set_Pixel_Sizes(
-  #          FT_Face face,
-  #          FT_UInt pixel_width,
-  #          FT_UInt pixel_height)
+  # FT_Error FT_Set_Pixel_Sizes(FT_Face face, FT_UInt pixel_width, FT_UInt pixel_height)
   ft_function 'Set_Pixel_Sizes', FaceRec.ptr, :FT_UInt, :FT_UInt
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Get_Track_Kerning
@@ -156,11 +153,11 @@ module FT
                   'FT_Face_GetCharVariantIsDefault', [FaceRec.ptr(:in), :FT_ULong, :FT_ULong], :FT_Int
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-glyph_variants.html#FT_Face_GetVariantSelectors
-  # FT_EXPORT( FT_UInt32* ) FT_Face_GetVariantSelectors( FT_Face  face );
+  # FT_UInt32* FT_Face_GetVariantSelectors( FT_Face  face );
   attach_function 'Face_GetVariantSelectors', 'FT_Face_GetVariantSelectors', [FaceRec.ptr(:in)], :pointer
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-glyph_variants.html#FT_Face_GetVariantsOfChar
-  # FT_EXPORT( FT_UInt32* ) FT_Face_GetVariantsOfChar( FT_Face face, FT_ULong charcode );
+  # FT_UInt32* FT_Face_GetVariantsOfChar( FT_Face face, FT_ULong charcode );
   attach_function 'Face_GetVariantsOfChar', 'FT_Face_GetVariantsOfChar', [FaceRec.ptr(:in), :FT_ULong], :pointer
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-glyph_variants.html#FT_Face_GetCharsOfVariant
@@ -175,11 +172,11 @@ module FT
   # BDF
   # https://www.freetype.org/freetype2/docs/reference/ft2-bdf_fonts.html#FT_Get_BDF_Charset_ID
   # FT_Error FT_Get_BDF_Charset_ID( FT_Face face, const char*  *acharset_encoding, const char*  *acharset_registry )
-  # ft_function 'Get_BDF_Charset_ID', FaceRec.ptr(:in), :string, :string
+  ft_function 'Get_BDF_Charset_ID', FaceRec.ptr(:in), :string, :string
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-bdf_fonts.html#FT_Get_BDF_Property
   # FT_Error FT_Get_BDF_Property( FT_Face face, const char* prop_name, BDF_PropertyRec  *aproperty )
-  # ft_function 'Get_BDF_Property', FaceRec.ptr(:in), :string, PropertyRec.ptr(:out)
+  ft_function 'Get_BDF_Property', FaceRec.ptr(:in), :string, PropertyRec.ptr(:out)
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Request_Size
   # FT_Error FT_Request_Size( FT_Face face, FT_Size_Request req );
@@ -196,6 +193,4 @@ module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_Set_Transform
   # void FT_Set_Transform( FT_Face face, FT_Matrix*  matrix, FT_Vector*  delta );
   attach_function 'Set_Transform', 'FT_Set_Transform', [FaceRec.ptr, Matrix.ptr(:in), Vector.ptr(:in)], :void
-
-
 end

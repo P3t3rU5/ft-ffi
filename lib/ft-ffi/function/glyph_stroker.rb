@@ -1,7 +1,7 @@
-require_relative '../struct/glyph/glyph_rec'
-require_relative '../enum/stroker_linecap'
-require_relative '../enum/stroker_linejoin'
-require_relative '../enum/stroker_border'
+require_relative '../struct/glyph/rec'
+require_relative '../enum/stroker/linecap'
+require_relative '../enum/stroker/linejoin'
+require_relative '../enum/stroker/border'
 
 module FT
 
@@ -12,11 +12,7 @@ module FT
   ft_function 'Glyph_Stroke', GlyphRec.ptr, :FT_Stroker, :FT_Bool
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-glyph_stroker.html#FT_Glyph_StrokeBorder
-  # FT_Error FT_Glyph_StrokeBorder(
-  #   FT_Glyph    *pglyph,
-  #   FT_Stroker   stroker,
-  #   FT_Bool      inside,
-  #   FT_Bool      destroy )
+  # FT_Error FT_Glyph_StrokeBorder( FT_Glyph *pglyph, FT_Stroker   stroker, FT_Bool inside, FT_Bool      destroy )
   ft_function 'Glyph_StrokeBorder', GlyphRec.ptr, :FT_Stroker, :FT_Bool, :FT_Bool
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-glyph_stroker.html#FT_Glyph_StrokeBorder
@@ -74,7 +70,7 @@ module FT
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-glyph_stroker.html#FT_Stroker_New
   # FT_Error FT_Stroker_New( FT_Library   library, FT_Stroker  *astroker );
-  ft_function 'Stroker_New', LibraryRec, :FT_Stroker
+  ft_function 'Stroker_New', LibraryRec.ptr(:in), :FT_Stroker
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-glyph_stroker.html#FT_Stroker_ParseOutline
   # FT_Error FT_Stroker_ParseOutline( FT_Stroker   stroker, FT_Outline*  outline, FT_Bool opened );

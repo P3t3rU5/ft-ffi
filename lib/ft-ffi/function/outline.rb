@@ -1,23 +1,20 @@
-require_relative '../struct/outline'
-require_relative '../struct/outline_funcs'
+require_relative '../struct/image/outline'
+require_relative '../struct/image/outline_funcs'
 require_relative '../struct/library_rec'
-require_relative '../struct/bitmap'
+require_relative '../struct/image/bitmap'
 require_relative '../struct/matrix'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-outline_processing.html#FT_Outline_Check
-  # FT_Error FT_Outline_Check( FT_Outline*  outline );
+  # FT_Error FT_Outline_Check( FT_Outline* outline );
   ft_function 'Outline_Check', Outline.ptr(:in)
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-outline_processing.html#FT_Outline_Copy
-  # FT_Error FT_Outline_Copy( const FT_Outline*  source, FT_Outline *target );
+  # FT_Error FT_Outline_Copy( const FT_Outline* source, FT_Outline *target );
   ft_function 'Outline_Copy', Outline.ptr(:in), Outline.ptr(:out)
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-outline_processing.html#FT_Outline_Decompose
-  # FT_Error FT_Outline_Decompose(
-  #   FT_Outline*              outline,
-  #   const FT_Outline_Funcs*  func_interface,
-  #   void*                    user );
+  # FT_Error FT_Outline_Decompose(FT_Outline* outline, const FT_Outline_Funcs* func_interface, void* user );
   ft_function 'Outline_Decompose', Outline.ptr(:in), Outline_Funcs.ptr(:in), :pointer
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-outline_processing.html#FT_Outline_Done

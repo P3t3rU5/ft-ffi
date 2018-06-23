@@ -1,5 +1,6 @@
 require_relative '../struct/face_rec'
-require_relative '../struct/sfnt_name'
+require_relative '../struct/sfnt/name'
+require_relative '../struct/sfnt/lang_tag'
 
 module FT
   # SfntName
@@ -10,6 +11,10 @@ module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-sfnt_names.html#FT_Get_Sfnt_Name
   # FT_Error FT_Get_Sfnt_Name( FT_Face face, FT_UInt idx, FT_SfntName  *aname )
   ft_function 'Get_Sfnt_Name', FaceRec.ptr(:in), :FT_UInt, SfntName
+
+  # https://www.freetype.org/freetype2/docs/reference/ft2-sfnt_names.html#FT_Get_Sfnt_LangTag
+  # FT_Error FT_Get_Sfnt_LangTag( FT_Face face, FT_UInt langID, FT_SfntLangTag *alangTag );
+  ft_function 'Get_Sfnt_LangTag', FaceRec.ptr(:in), :FT_UInt, SfntLangTag.ptr(:out)
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-sfnt_names.html#FT_PARAM_TAG_IGNORE_PREFERRED_FAMILY
   #define FT_PARAM_TAG_IGNORE_PREFERRED_FAMILY  FT_MAKE_TAG( 'i', 'g', 'p', 'f' )

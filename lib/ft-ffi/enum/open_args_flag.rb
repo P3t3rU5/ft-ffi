@@ -7,5 +7,5 @@ module FT
       :PARAMS,  0x10,
   ]
 
-  # define_prefix(:OPEN, OpenArgsFlag)
+  define_prefix(:OPEN, OpenArgsFlag)
 end

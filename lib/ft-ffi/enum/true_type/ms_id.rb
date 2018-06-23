@@ -5,11 +5,12 @@ module FT
       :UNICODE_CS, 1,
       :SJIS,       2,
       :GB2312,     3,
+      :PRC,        3,
       :BIG_5,      4,
       :WANSUNG,    5,
       :JOHAB,      6,
       :UCS_4,     10,
   ]
 
-  # define_prefix(:MS_ID, MsId)
+  define_prefix(:TT_MS_ID, MsId)
 end

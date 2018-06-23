@@ -12,5 +12,5 @@ module FT
       :MAX
   ]
 
-  # define_prefix(:SFNT, SfntTag)
+  define_prefix(:SFNT, SfntTag)
 end

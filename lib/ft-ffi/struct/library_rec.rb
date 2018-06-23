@@ -1,12 +1,9 @@
 require_relative 'memory_rec'
-require_relative 'module_rec'
-require_relative 'list_rec'
-require_relative 'renderer_rec'
+require_relative 'module/rec'
+require_relative 'list/rec'
+require_relative 'renderer/rec'
 
 module FT
-
-  MAX_MODULES = 32
-
   DebugHook_Func = callback 'DebugHook_Func', [LibraryRec.ptr], :void
 
   class LibraryRec < FFIAdditions::Struct

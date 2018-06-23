@@ -1,7 +1,8 @@
 require_relative 'face_rec'
 
 module FT
-  class FT_Prop_IncreaseXHeight < FFIAdditions::Struct
+  # https://www.freetype.org/freetype2/docs/reference/ft2-properties.html#FT_Prop_IncreaseXHeight
+  class Prop_IncreaseXHeight < FFIAdditions::Struct
     layout face:   FaceRec,
            limit: :FT_UInt
   end

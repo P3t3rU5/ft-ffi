@@ -4,6 +4,10 @@ module FT
   # LCD Filtering
   # http://freetype.sourceforge.net/freetype2/docs/reference/ft2-lcd_filtering.html
 
+  LCD_FILTER_FIVE_TAPS = 5
+
+  # typedef FT_Byte  FT_LcdFiveTapFilter[FT_LCD_FILTER_FIVE_TAPS];
+
   # http://freetype.sourceforge.net/freetype2/docs/reference/ft2-lcd_filtering.html#FT_Library_SetLcdFilter
   # FT_Error FT_Library_SetLcdFilter( FT_Library    library, FT_LcdFilter  filter );
   ft_function 'Library_SetLcdFilter', LibraryRec.ptr(:in), LcdFilter

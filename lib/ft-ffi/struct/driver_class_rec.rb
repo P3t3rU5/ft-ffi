@@ -1,9 +1,9 @@
-require_relative 'stream_rec'
+require_relative 'stream/rec'
 require_relative 'face_rec'
 require_relative 'parameter'
-require_relative 'size_rec'
-require_relative 'glyph/glyph_slot_rec'
-require_relative 'vector'
+require_relative 'size/rec'
+require_relative 'glyph/slot_rec'
+require_relative 'image/vector'
 require_relative '../enum/size_request_type'
 
 module FT
@@ -21,28 +21,28 @@ module FT
   Size_SelectFunc = callback 'Size_SelectFunc', [SizeRec.ptr, :FT_ULong], :FT_Error
 
   class Driver_ClassRec < FFI::Struct
-    layout root:                 Module_Class,
+    layout root:             Module_Class,
 
-           face_object_size:         :FT_Long,
-           size_object_size:         :FT_Long,
-           slot_object_size:         :FT_Long,
+           face_object_size: :FT_Long,
+           size_object_size: :FT_Long,
+           slot_object_size: :FT_Long,
 
-           init_face:           Face_InitFunc,
-           done_face:           Face_DoneFunc,
+           init_face:         Face_InitFunc,
+           done_face:         Face_DoneFunc,
 
-           init_size:           Size_InitFunc,
-           done_size:           Size_DoneFunc,
+           init_size:         Size_InitFunc,
+           done_size:         Size_DoneFunc,
 
-           init_slot:           Slot_InitFunc,
-           done_slot:           Slot_DoneFunc,
+           init_slot:         Slot_InitFunc,
+           done_slot:         Slot_DoneFunc,
 
-           load_glyph:          Slot_LoadFunc,
+           load_glyph:        Slot_LoadFunc,
 
-           get_kerning:   Face_GetKerningFunc,
+           get_kerning:       Face_GetKerningFunc,
            attach_file:       Face_AttachFunc,
-           get_advances: Face_GetAdvancesFunc,
+           get_advances:      Face_GetAdvancesFunc,
 
-           request_size:     Size_RequestFunc,
+           request_size:      Size_RequestFunc,
            select_size:       Size_SelectFunc
   end
 end

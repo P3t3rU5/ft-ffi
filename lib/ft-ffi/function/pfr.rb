@@ -1,5 +1,5 @@
 require_relative '../struct/face_rec'
-require_relative '../struct/vector'
+require_relative '../struct/image/vector'
 
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-pfr_fonts.html
@@ -26,5 +26,5 @@ module FT
   #   FT_Face   face,
   #   FT_UInt   gindex,
   #   FT_Pos   *aadvance )
-  ft_function 'Get_PFR_Advance', FaceRec.ptr(:in), :FT_UInt, :FT_Pos
+  ft_function 'Get_PFR_Advance', FaceRec.ptr(:in), :FT_UInt, :pointer
 end

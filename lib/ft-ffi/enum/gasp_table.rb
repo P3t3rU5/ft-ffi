@@ -8,5 +8,5 @@ module FT
       :SYMMETRIC_GRIDFIT,    0x10,
   ]
 
-  # define_prefix(:GASP, GaspTable)
+  define_prefix(:GASP, GaspTable)
 end

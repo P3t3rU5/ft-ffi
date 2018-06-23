@@ -16,10 +16,14 @@ module FT
     :MONOCHROME,                  0x001000,
     :LINEAR_DESIGN,               0x002000,
     :NO_AUTOHINT,                 0x008000,
+
     :COLOR,                       0x100000,
     :COMPUTE_METRICS,             0x200000,
     :BITMAP_METRICS_ONLY,         0x400000,
+
     :ADVANCE_ONLY,                0x000100,
     :SBITS_ONLY,                  0x004000
   ]
+
+  define_prefix(:LOAD, LoadFlag)
 end

@@ -6,5 +6,5 @@ module FT
       :CARDINAL, 3
   ]
 
-  # define_prefix(:BDF_PROPERTY_TYPE, PropertyType)
+  define_prefix(:BDF_PROPERTY_TYPE, PropertyType)
 end

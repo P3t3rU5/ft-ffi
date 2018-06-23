@@ -1,4 +1,4 @@
-require_relative '../struct/stream_rec'
+require_relative '../struct/stream/rec'
 require_relative '../struct/frame_field'
 
 module FT

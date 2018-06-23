@@ -25,11 +25,11 @@ module FT
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-truetype_tables.html#FT_Get_CMap_Language_ID
   # FT_ULong FT_Get_CMap_Language_ID( FT_CharMap  charmap );
-  attach_function 'Get_CMap_Language_ID', 'FT_Get_CMap_Language_ID', [CharMapRec.ptr], :ulong
+  attach_function 'Get_CMap_Language_ID', 'FT_Get_CMap_Language_ID', [CharMapRec.ptr(:in)], :ulong
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-truetype_tables.html#FT_Get_CMap_Format
   # FT_EXPORT( FT_Long )  FT_Get_CMap_Format( FT_CharMap  charmap );
-  attach_function 'Get_CMap_Format', 'FT_Get_CMap_Format', [CharMapRec.ptr], :long
+  attach_function 'Get_CMap_Format', 'FT_Get_CMap_Format', [CharMapRec.ptr(:in)], :long
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-truetype_engine.html#FT_Get_TrueType_Engine_Type
   # FT_TrueTypeEngineType FT_Get_TrueType_Engine_Type( FT_Library  library );

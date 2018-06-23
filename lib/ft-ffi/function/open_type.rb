@@ -3,8 +3,9 @@ require_relative '../struct/face_rec'
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-ot_validation.html#FT_OpenType_Free
   # void FT_OpenType_Free( FT_Face   face, FT_Bytes  table );
-  attach_function 'OpenType_Free', 'FT_OpenType_Free', [FaceRec.ptr, :FT_Bytes], :void
+  attach_function 'OpenType_Free', 'FT_OpenType_Free', [FaceRec.ptr(:in), :FT_Bytes], :void
 
+  # https://www.freetype.org/freetype2/docs/reference/ft2-ot_validation.html#FT_OpenType_Validate
   # FT_Error FT_OpenType_Validate(
   #   FT_Face    face,
   #   FT_UInt    validation_flags,

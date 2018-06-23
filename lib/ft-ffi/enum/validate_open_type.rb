@@ -6,6 +6,7 @@ module FT
      :GSUB, 0x0800,
      :JSTF, 0x1000,
      :MATH, 0x2000,
+
      :OT,   0x3F00
   ]
 
