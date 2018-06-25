@@ -1,5 +1,3 @@
-$LOAD_PATH.unshift File.expand_path('../../ffi-additions/lib', __dir__)
-
 require 'rspec'
 require_relative '../lib/ft-ffi'
 
