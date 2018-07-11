@@ -15,6 +15,19 @@ module FT
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-outline_processing.html#FT_Outline_Funcs
   class Outline_Funcs < FFIAdditions::Struct
+    def move_to; end
+    def move_to=(v); end
+    def line_to; end
+    def line_to=(v); end
+    def conic_to; end
+    def conic_to=(v); end
+    def cubic_to; end
+    def cubic_to=(v); end
+    def shift; end
+    def shift=(v); end
+    def delta; end
+    def delta=(v); end
+
     layout move_to:  Outline_MoveToFunc,
            line_to:  Outline_LineToFunc,
            conic_to: Outline_ConicToFunc,

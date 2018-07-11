@@ -9,7 +9,14 @@ module FT
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-incremental.html#FT_Incremental_FuncsRec
   class Incremental_FuncsRec < FFIAdditions::Struct
-    layout get_glyph_data:     Incremental_GetGlyphDataFunc,
+    def get_glyph_data; end
+    def get_glyph_data=(v); end
+    def free_glyph_data; end
+    def free_glyph_data=(v); end
+    def get_glyph_metrics; end
+    def get_glyph_metrics=(v); end
+
+    layout get_glyph_data:    Incremental_GetGlyphDataFunc,
            free_glyph_data:   Incremental_FreeGlyphDataFunc,
            get_glyph_metrics: Incremental_GetGlyphMetricsFunc
   end

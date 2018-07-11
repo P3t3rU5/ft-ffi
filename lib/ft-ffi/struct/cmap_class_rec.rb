@@ -14,19 +14,41 @@ module FT
   CMap_VariantCharListFunc = callback 'CMap_VariantCharListFunc', [CMapRec, MemoryRec, :FT_UInt32], :pointer
 
   class CMap_ClassRec < FFIAdditions::Struct
-    layout size:                :FT_ULong,
-           init:            CMap_InitFunc,
-           done:            CMap_DoneFunc,
-           char_index: CMap_CharIndexFunc,
-           char_next:   CMap_CharNextFunc,
+    def size; end
+    def size=(v); end
+    def init; end
+    def init=(v); end
+    def done; end
+    def done=(v); end
+    def char_index; end
+    def char_index=(v); end
+    def char_next; end
+    def char_next=(v); end
+
+    def char_var_index; end
+    def char_var_index=(v); end
+    def char_var_default; end
+    def char_var_default=(v); end
+    def variant_list; end
+    def variant_list=(v); end
+    def charvariant_list; end
+    def charvariant_list=(v); end
+    def variantchar_list; end
+    def variantchar_list=(v); end
+
+    layout size:             :FT_ULong,
+           init:             CMap_InitFunc,
+           done:             CMap_DoneFunc,
+           char_index:       CMap_CharIndexFunc,
+           char_next:        CMap_CharNextFunc,
 
            # Subsequent entries are special ones for format 14 -- the variant
            # selector subtable which behaves like no other
 
-           char_var_index:       CMap_CharVarIndexFunc,
+           char_var_index:   CMap_CharVarIndexFunc,
            char_var_default: CMap_CharVarIsDefaultFunc,
-           variant_list:          CMap_VariantListFunc,
-           charvariant_list:  CMap_CharVariantListFunc,
-           variantchar_list:  CMap_VariantCharListFunc
+           variant_list:     CMap_VariantListFunc,
+           charvariant_list: CMap_CharVariantListFunc,
+           variantchar_list: CMap_VariantCharListFunc
   end
 end

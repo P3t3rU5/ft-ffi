@@ -3,6 +3,11 @@ require_relative 'node_rec'
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-list_processing.html#FT_ListRec
   class ListRec < FFIAdditions::Struct
+    def head; end
+    def head=(v); end
+    def tail; end
+    def tail=(v); end
+
     layout head: ListNodeRec,
            tail: ListNodeRec
 

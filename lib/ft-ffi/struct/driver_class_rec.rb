@@ -21,6 +21,39 @@ module FT
   Size_SelectFunc = callback 'Size_SelectFunc', [SizeRec.ptr, :FT_ULong], :FT_Error
 
   class Driver_ClassRec < FFI::Struct
+    def root; end
+    def root=(v); end
+    def face_object_size; end
+    def face_object_size=(v); end
+    def size_object_size; end
+    def size_object_size=(v); end
+    def slot_object_size; end
+    def slot_object_size=(v); end
+    def init_face; end
+    def init_face=(v); end
+    def done_face; end
+    def done_face=(v); end
+    def init_size; end
+    def init_size=(v); end
+    def done_size; end
+    def done_size=(v); end
+    def init_slot; end
+    def init_slot=(v); end
+    def done_slot; end
+    def done_slot=(v); end
+    def load_glyph; end
+    def load_glyph=(v); end
+    def get_kerning; end
+    def get_kerning=(v); end
+    def attach_file; end
+    def attach_file=(v); end
+    def get_advances; end
+    def get_advances=(v); end
+    def request_size; end
+    def request_size=(v); end
+    def select_size; end
+    def select_size=(v); end
+
     layout root:             Module_Class,
 
            face_object_size: :FT_Long,

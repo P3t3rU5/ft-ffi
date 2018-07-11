@@ -11,6 +11,25 @@ module FT
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-module_management.html#FT_Module_Class
   class Module_Class < FFIAdditions::Struct
+    def module_flags; end
+    def module_flags=(v); end
+    def module_size; end
+    def module_size=(v); end
+    def module_name; end
+    def module_name=(v); end
+    def module_version; end
+    def module_version=(v); end
+    def module_requires; end
+    def module_requires=(v); end
+    def module_interface; end
+    def module_interface=(v); end
+    def module_init; end
+    def module_init=(v); end
+    def module_done; end
+    def module_done=(v); end
+    def get_interface; end
+    def get_interface=(v); end
+
     layout  module_flags:     ModuleBitFlag,
             module_size:      :FT_Long,
             module_name:      :string,

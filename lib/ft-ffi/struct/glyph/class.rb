@@ -11,6 +11,23 @@ module FT
   Glyph_PrepareFunc = callback 'Glyph_PrepareFunc', [GlyphRec.ptr, GlyphSlotRec.ptr], :FT_Error
 
   class GlyphClass < FFIAdditions::Struct
+    def glyph_size; end
+    def glyph_size=(v); end
+    def glyph_format; end
+    def glyph_format=(v); end
+    def glyph_init; end
+    def glyph_init=(v); end
+    def glyph_done; end
+    def glyph_done=(v); end
+    def glyph_copy; end
+    def glyph_copy=(v); end
+    def glyph_transform; end
+    def glyph_transform=(v); end
+    def glyph_bbox; end
+    def glyph_bbox=(v); end
+    def glyph_prepare; end
+    def glyph_prepare=(v); end
+
     layout glyph_size:      :FT_Long,
            glyph_format:    GlyphFormat,
 

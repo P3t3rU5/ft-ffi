@@ -4,6 +4,15 @@ require_relative 'metrics'
 
 module FT
   class SizeRec < FFIAdditions::Struct
+    def face; end
+    def face=(v); end
+    def generic; end
+    def generic=(v); end
+    def metrics; end
+    def metrics=(v); end
+    def internal; end
+    def internal=(v); end
+
     layout face:     FaceRec.ptr,
            generic:  Generic,
            metrics:  Size_Metrics,

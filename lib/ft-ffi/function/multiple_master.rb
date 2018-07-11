@@ -3,20 +3,23 @@ require_relative '../struct/multiple_masters/multi_master'
 require_relative '../struct/multiple_masters/mm_var'
 
 module FT
-
   # https://www.freetype.org/freetype2/docs/reference/ft2-multiple_masters.html#FT_Get_Multi_Master
- # FT_Error  FT_Get_Multi_Master( FT_Face face, FT_Multi_Master  *amaster );
+  def self.Get_Multi_Master(face, amaster); end
+  # FT_Error  FT_Get_Multi_Master( FT_Face face, FT_Multi_Master  *amaster );
   ft_function 'Get_Multi_Master', FaceRec.ptr(:in), Multi_Master.ptr(:out)
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-multiple_masters.html#FT_Get_MM_Var
+  def self.Get_MM_Var(face, amaster); end
   # FT_Error FT_Get_MM_Var( FT_Face face, FT_MM_Var* *amaster );
   ft_function 'Get_MM_Var', FaceRec.ptr(:in), MM_Var.ptr
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-multiple_masters.html#FT_Done_MM_Var
+  def self.Done_MM_Var(library, amaster); end
   # FT_ErrorFT_Done_MM_Var( FT_Library library, FT_MM_Var *amaster );
   ft_function 'Done_MM_Var', LibraryRec.ptr, MM_Var.ptr
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-multiple_masters.html#FT_Set_MM_Design_Coordinates
+  def self.Set_MM_Design_Coordinates(face, num_coords, coords); end
   # FT_Error FT_Set_MM_Design_Coordinates( FT_Face   face, FT_UInt   num_coords, FT_Long*  coords )
   ft_function 'Set_MM_Design_Coordinates', FaceRec.ptr, :FT_UInt, :pointer
 
@@ -24,34 +27,42 @@ module FT
   VAR_AXIS_FLAG_HIDDEN = 1
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-multiple_masters.html#FT_Get_Var_Axis_Flags
+  def self.Get_Var_Axis_Flags(master, axis_index, flags); end
   # FT_Error FT_Get_Var_Axis_Flags( FT_MM_Var* master, FT_UInt axis_index, FT_UInt* flags );
   ft_function 'Get_Var_Axis_Flags', MM_Var.ptr(:in), :FT_UInt, :pointer
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-multiple_masters.html#FT_Get_Var_Design_Coordinates
+  def self.Get_Var_Design_Coordinates(face, num_coords, coords); end
   # FT_Error FT_Get_Var_Design_Coordinates( FT_Face face, FT_UInt num_coords, FT_Fixed*  coords );
   ft_function 'Get_Var_Design_Coordinates', FaceRec.ptr(:in), :FT_UInt, :pointer
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-multiple_masters.html#FT_Set_Var_Design_Coordinates
+  def self.Set_Var_Design_Coordinates(face, num_coords, coords); end
   # FT_Error FT_Set_Var_Design_Coordinates( FT_Face    face, FT_UInt    num_coords, FT_Fixed*  coords );
   ft_function 'Set_Var_Design_Coordinates', FaceRec.ptr, :FT_UInt, :pointer
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-multiple_masters.html#FT_Get_MM_Blend_Coordinates
+  def self.Get_MM_Blend_Coordinates(face, num_coords, coords); end
   # FT_Error FT_Get_MM_Blend_Coordinates( FT_Face face, FT_UInt num_coords, FT_Fixed* coords );
   ft_function 'Get_MM_Blend_Coordinates', FaceRec.ptr(:in), :FT_UInt, :pointer
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-multiple_masters.html#FT_Set_MM_Blend_Coordinates
+  def self.Set_MM_Blend_Coordinates(face, num_coords, coords); end
   # FT_Error FT_Set_MM_Blend_Coordinates( FT_Face    face, FT_UInt    num_coords, FT_Fixed*  coords )
   ft_function 'Set_MM_Blend_Coordinates', FaceRec.ptr, :FT_UInt, :pointer
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-multiple_masters.html#FT_Get_Var_Blend_Coordinates
+  def self.Get_Var_Blend_Coordinates(face, num_coords, coords); end
   # FT_Error FT_Get_Var_Blend_Coordinates( FT_Face face, FT_UInt num_coords, FT_Fixed* coords );
   ft_function 'Get_Var_Blend_Coordinates', FaceRec.ptr(:in), :FT_UInt, :pointer
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-multiple_masters.html#FT_Set_Var_Blend_Coordinates
+  def self.Set_Var_Blend_Coordinates(face, num_coords, coords); end
   # FT_Error FT_Set_Var_Blend_Coordinates( FT_Face    face, FT_UInt    num_coords, FT_Fixed*  coords )
   ft_function 'Set_Var_Blend_Coordinates', FaceRec.ptr, :FT_UInt, :pointer
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-multiple_masters.html#FT_Set_Named_Instance
+  def self.Set_Named_Instance(face, instance_index); end
   # FT_Error FT_Set_Named_Instance( FT_Face face, FT_UInt instance_index );
   ft_function 'Set_Named_Instance', FaceRec.ptr(:in), :FT_UInt
 end

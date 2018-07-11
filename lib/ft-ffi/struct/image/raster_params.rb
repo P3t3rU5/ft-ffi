@@ -13,6 +13,25 @@ module FT
   Raster_BitSet_Func = callback 'Raster_BitSet_Func', [:int, :int, :pointer], :void
 
   class Raster_Params < FFIAdditions::Struct
+    def target; end
+    def target=(v); end
+    def source; end
+    def source=(v); end
+    def flags; end
+    def flags=(v); end
+    def gray_spans; end
+    def gray_spans=(v); end
+    def black_spans; end
+    def black_spans=(v); end
+    def bit_test; end
+    def bit_test=(v); end
+    def bit_set; end
+    def bit_set=(v); end
+    def user; end
+    def user=(v); end
+    def clip_box; end
+    def clip_box=(v); end
+
     layout target:      Bitmap.ptr,
            source:      :pointer,
            flags:       RasterParamsFlag,

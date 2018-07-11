@@ -5,6 +5,15 @@ require_relative 'class'
 
 module FT
   class GlyphRec < FFIAdditions::Struct
+    def library; end
+    def library=(v); end
+    def clazz; end
+    def clazz=(v); end
+    def format; end
+    def format=(v); end
+    def advance; end
+    def advance=(v); end
+
     layout library:   LibraryRec.ptr,
            clazz:     GlyphClass.ptr,
            format:    GlyphFormat,

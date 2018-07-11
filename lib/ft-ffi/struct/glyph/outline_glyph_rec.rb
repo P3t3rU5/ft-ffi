@@ -4,7 +4,12 @@ require_relative '../image/outline'
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-glyph_management.html#FT_OutlineGlyphRec
   class OutlineGlyphRec < FFIAdditions::Struct
-    layout root:   GlyphRec,
+    def root; end
+    def root=(v); end
+    def outline; end
+    def outline=(v); end
+
+    layout root:    GlyphRec,
            outline: Outline
 
     def to_s

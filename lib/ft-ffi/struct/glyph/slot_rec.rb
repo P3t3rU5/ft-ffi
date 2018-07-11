@@ -11,6 +11,51 @@ require_relative 'metrics'
 module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-base_interface.html#FT_GlyphSlotRec
   class GlyphSlotRec < FFIAdditions::Struct
+    def library; end
+    def library=(v); end
+    def face; end
+    def face=(v); end
+    def next; end
+    def next=(v); end
+    def reserved; end
+    def reserved=(v); end
+    def generic; end
+    def generic=(v); end
+    def metrics; end
+    def metrics=(v); end
+    def linearHoriAdvance; end
+    def linearHoriAdvance=(v); end
+    def linearVertAdvance; end
+    def linearVertAdvance=(v); end
+    def advance; end
+    def advance=(v); end
+    def format; end
+    def format=(v); end
+    def bitmap; end
+    def bitmap=(v); end
+    def bitmap_left; end
+    def bitmap_left=(v); end
+    def bitmap_top; end
+    def bitmap_top=(v); end
+    def outline; end
+    def outline=(v); end
+    def num_subglyphs; end
+    def num_subglyphs=(v); end
+    def subglyphs; end
+    def subglyphs=(v); end
+    def control_data; end
+    def control_data=(v); end
+    def control_len; end
+    def control_len=(v); end
+    def lsb_delta; end
+    def lsb_delta=(v); end
+    def rsb_delta; end
+    def rsb_delta=(v); end
+    def other; end
+    def other=(v); end
+    def internal; end
+    def internal=(v); end
+
     layout library:           LibraryRec.ptr,
            face:              FaceRec.ptr,
            next:              GlyphSlotRec.ptr,

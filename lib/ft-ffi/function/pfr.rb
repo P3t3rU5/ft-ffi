@@ -5,6 +5,7 @@ module FT
   # https://www.freetype.org/freetype2/docs/reference/ft2-pfr_fonts.html
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-pfr_fonts.html#FT_Get_PFR_Metrics
+  def self.Get_PFR_Metrics(face, aoutline_resolution, ametrics_resolution, ametrics_x_scale, ametrics_y_scale); end
   # FT_Error FT_Get_PFR_Metrics(
   #   FT_Face    face,
   #   FT_UInt   *aoutline_resolution,
@@ -14,17 +15,12 @@ module FT
   ft_function 'Get_PFR_Metrics', FaceRec.ptr(:in), :pointer, :pointer, :pointer, :pointer
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-pfr_fonts.html#FT_Get_PFR_Kerning
-  # FT_Error FT_Get_PFR_Kerning(
-  #   FT_Face     face,
-  #   FT_UInt     left,
-  #   FT_UInt     right,
-  #   FT_Vector  *avector );
+  def self.Get_PFR_Kerning(face, left, right, avector); end
+  # FT_Error FT_Get_PFR_Kerning( FT_Face     face, FT_UInt     left, FT_UInt     right, FT_Vector  *avector );
   ft_function 'Get_PFR_Kerning', FaceRec.ptr(:in), :FT_UInt, :FT_UInt, Vector.ptr(:out)
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-pfr_fonts.html#FT_Get_PFR_Advance
-  # FT_Error FT_Get_PFR_Advance(
-  #   FT_Face   face,
-  #   FT_UInt   gindex,
-  #   FT_Pos   *aadvance )
+  def self.Get_PFR_Advance(face, gindex, aadvance); end
+  # FT_Error FT_Get_PFR_Advance( FT_Face   face, FT_UInt   gindex, FT_Pos   *aadvance )
   ft_function 'Get_PFR_Advance', FaceRec.ptr(:in), :FT_UInt, :pointer
 end

@@ -4,6 +4,11 @@ module FT
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-basic_types.html#FT_Generic
   class Generic < FFIAdditions::Struct
+    def ftData; end
+    def ftData=(v); end
+    def finalizer; end
+    def finalizer=(v); end
+
     layout ftData:    :pointer,
            finalizer: Generic_Finalizer
 

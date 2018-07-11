@@ -10,6 +10,19 @@ module FT
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-raster.html#FT_Raster_Funcs
   class Raster_Funcs < FFIAdditions::Struct
+    def glyph_format; end
+    def glyph_format=(v); end
+    def raster_new; end
+    def raster_new=(v); end
+    def raster_reset; end
+    def raster_reset=(v); end
+    def raster_set_mode; end
+    def raster_set_mode=(v); end
+    def raster_render; end
+    def raster_render=(v); end
+    def raster_done; end
+    def raster_done=(v); end
+
     layout glyph_format:    GlyphFormat,
            raster_new:      Raster_NewFunc,
            raster_reset:    Raster_ResetFunc,

@@ -2,9 +2,18 @@ require_relative '../image/bitmap'
 
 module FT
   class BitmapGlyphRec < FFIAdditions::Struct
-    layout root: GlyphRec,
-           left:     :int,
-           top:      :int,
+    def root; end
+    def root=(v); end
+    def left; end
+    def left=(v); end
+    def top; end
+    def top=(v); end
+    def bitmap; end
+    def bitmap=(v); end
+
+    layout root:   GlyphRec,
+           left:   :int,
+           top:    :int,
            bitmap: Bitmap
 
     def to_s

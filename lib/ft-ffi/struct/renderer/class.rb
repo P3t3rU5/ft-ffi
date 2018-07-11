@@ -13,6 +13,21 @@ module FT
 
   # https://www.freetype.org/freetype2/docs/reference/ft2-module_management.html#FT_Renderer_Class
   class Renderer_Class < FFIAdditions::Struct
+    def root; end
+    def root=(v); end
+    def glyph_format; end
+    def glyph_format=(v); end
+    def render_glyph; end
+    def render_glyph=(v); end
+    def transform_glyph; end
+    def transform_glyph=(v); end
+    def get_glyph_cbox; end
+    def get_glyph_cbox=(v); end
+    def set_mode; end
+    def set_mode=(v); end
+    def raster_class; end
+    def raster_class=(v); end
+
     layout root:            Module_Class,
 
            glyph_format:    GlyphFormat,
